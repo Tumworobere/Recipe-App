@@ -300,3 +300,163 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 158ms (Views: 118.2ms | ActiveRecord: 5.1ms | Allocations: 53363)
 
 
+Started GET "/" for 127.0.0.1 at 2022-04-11 15:12:09 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 563)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2055)
+  Rendered layout layouts/application.html.erb (Duration: 57.7ms | Allocations: 12672)
+Completed 500 Internal Server Error in 84ms (Allocations: 15139)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2022-04-11 15:13:34 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.7ms | Allocations: 563)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 2053)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 10493)
+Completed 500 Internal Server Error in 57ms (Allocations: 12170)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2022-04-11 15:15:57 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 124)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 28.9ms | Allocations: 1008)
+  Rendered layout layouts/application.html.erb (Duration: 69.7ms | Allocations: 9034)
+Completed 500 Internal Server Error in 79ms (Allocations: 9823)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2022-04-11 15:16:16 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.3ms | Allocations: 900)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 34.1ms | Allocations: 6289)
+  Rendered layout layouts/application.html.erb (Duration: 279.0ms | Allocations: 59174)
+Completed 200 OK in 320ms (Views: 287.4ms | ActiveRecord: 5.5ms | Allocations: 72910)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-04-11 15:16:24 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 241)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 228)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1734)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 4198)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.0ms | Allocations: 5777)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-04-11 15:20:15 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.5ms | Allocations: 232)
+  Rendered devise/shared/_links.html.erb (Duration: 15.2ms | Allocations: 520)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 59.2ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 103.3ms | Allocations: 4570)
+Completed 200 OK in 147ms (Views: 142.0ms | ActiveRecord: 0.0ms | Allocations: 6253)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-04-11 15:20:45 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 571)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1441)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 4112)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 5859)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-04-11 15:21:15 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 571)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1434)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 4099)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 5841)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-04-11 15:21:21 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.8ms | Allocations: 232)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 93)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1423)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 3885)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.0ms | Allocations: 5280)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-04-11 15:21:24 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 124)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 2787)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 3640)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-04-11 15:26:15 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 124)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 116.0ms | Allocations: 11953)
+Completed 200 OK in 123ms (Views: 117.9ms | Allocations: 12677)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-04-11 15:26:22 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 643)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 2922)
+Completed 200 OK in 16ms (Views: 14.9ms | Allocations: 3592)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-04-11 15:26:32 +0100
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f14f0b26568>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.8ms | Allocations: 1037)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 95)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2358)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 4793)
+Completed 200 OK in 51ms (Views: 19.1ms | ActiveRecord: 9.8ms | Allocations: 10711)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-04-11 15:26:35 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 124)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 518)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2789)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 3603)
+
+
