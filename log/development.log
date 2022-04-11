@@ -460,3 +460,14 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 3603)
 
 
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-04-11 15:44:53 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 77)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 668)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 2947)
+Completed 200 OK in 18ms (Views: 14.5ms | Allocations: 3747)
+
+
