@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @foods = Food.all
   end
@@ -25,6 +27,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
+    authorize! :destroy, @food
     @food.destroy!
 
     respond_to do |format|
