@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   devise_scope :user do
-      root :to => "devise/sessions#new"
+    authenticated :user do
+      root :to => "users#show", as: :authenticated_root
+    end
+    unauthenticated :user do
+      root :to => "devise/sessions#new", as: :unauthenticated_root
+    end
   end
 end
