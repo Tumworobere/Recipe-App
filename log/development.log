@@ -8367,3 +8367,67 @@ FOREIGN KEY ("user_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8277932024918942610)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" ORDER BY "foods"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (4.5ms)[0m  [1m[32mINSERT INTO "foods" ("food", "measurement_unit", "unit_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["food", "apple"], ["measurement_unit", "grams"], ["unit_price", 10], ["created_at", "2022-04-12 08:09:22.193935"], ["updated_at", "2022-04-12 08:09:22.193935"], ["user_id", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" ORDER BY "foods"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.6ms)[0m  [1m[32mINSERT INTO "foods" ("food", "measurement_unit", "unit_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["food", "banana"], ["measurement_unit", "kilograms"], ["unit_price", 10], ["created_at", "2022-04-12 08:10:24.390708"], ["updated_at", "2022-04-12 08:10:24.390708"], ["user_id", 1]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFood Create (0.6ms)[0m  [1m[32mINSERT INTO "foods" ("food", "measurement_unit", "unit_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["food", "water-melon"], ["measurement_unit", "kilograms"], ["unit_price", 15], ["created_at", "2022-04-12 08:10:45.834295"], ["updated_at", "2022-04-12 08:10:45.834295"], ["user_id", 1]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 09:11:40 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (2.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:11
+  Rendered shared/_table.html.erb (Duration: 15.3ms | Allocations: 3660)
+  Rendered foods/index.html.erb within layouts/application (Duration: 58.3ms | Allocations: 8861)
+  Rendered layout layouts/application.html.erb (Duration: 61.2ms | Allocations: 8949)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 12.8ms | Allocations: 15148)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Food id: 1, food: "apple", measurement_unit: "grams", unit_price: 10, created_at: "2022-04-12 08:09:22.193935000 +0000", updated_at: "2022-04-12 08:09:22.193935000 +0000", user_id: 1>):
+    1: <tr>
+    2:   <td><%= food.name %></td>
+    3:   <td><%= food.measurement_unit %></td>
+    4:   <td><%= food.unit_price %></td>
+    5:   <td>
+  
+app/views/shared/_table.html.erb:2
+app/views/foods/index.html.erb:12
+app/views/foods/index.html.erb:11
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 09:12:08 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:11
+  Rendered shared/_table.html.erb (Duration: 2.9ms | Allocations: 195)
+  Rendered shared/_table.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_table.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered foods/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1408)
+  Rendered layout layouts/application.html.erb (Duration: 63.2ms | Allocations: 15531)
+Completed 200 OK in 73ms (Views: 68.0ms | ActiveRecord: 0.5ms | Allocations: 16704)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 09:13:07 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:11
+  Rendered shared/_table.html.erb (Duration: 3.7ms | Allocations: 188)
+  Rendered shared/_table.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_table.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered foods/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1408)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 4383)
+Completed 200 OK in 38ms (Views: 30.0ms | ActiveRecord: 0.5ms | Allocations: 5563)
+
+
