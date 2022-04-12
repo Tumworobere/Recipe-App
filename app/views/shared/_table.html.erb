@@ -3,6 +3,6 @@
   <td><%= food.measurement_unit %></td>
   <td>$<%= food.unit_price %></td>
   <td>
-    <a href="/foods/<%= food.id %>/delete" class="btn btn-danger">Delete</a>
+  <%= button_to "Delete Food", food, method: :delete, class:"btn btn-danger"%>
   </td>
 </tr>

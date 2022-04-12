@@ -9117,3 +9117,220 @@ Processing by FoodsController#index as HTML
 Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.8ms | Allocations: 3889)
 
 
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:25:06 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.8ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 0.3ms | Allocations: 36)
+  Rendered shared/_table.html.erb (Duration: 0.3ms | Allocations: 20)
+  Rendered shared/_table.html.erb (Duration: 0.3ms | Allocations: 20)
+  Rendered shared/_table.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered foods/index.html.erb within layouts/application (Duration: 34.1ms | Allocations: 5006)
+  Rendered layout layouts/application.html.erb (Duration: 69.4ms | Allocations: 18862)
+Completed 200 OK in 80ms (Views: 71.8ms | ActiveRecord: 11.4ms | Allocations: 24149)
+
+
+Started GET "/foods/1/delete" for 127.0.0.1 at 2022-04-12 10:25:08 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/foods/1/delete"):
+  
+Started GET "/foods/1/delete" for 127.0.0.1 at 2022-04-12 10:28:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/foods/1/delete"):
+  
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:28:30 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (1.0ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 4.6ms | Allocations: 630)
+  Rendered shared/_table.html.erb (Duration: 1.3ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 1.2ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 1.1ms | Allocations: 148)
+  Rendered foods/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 2418)
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 5307)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 1.0ms | Allocations: 6434)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2022-04-12 10:28:33 +0100
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1187)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/foods_controller.rb:27:in `destroy'
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:28:54 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.7ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 1.6ms | Allocations: 471)
+  Rendered shared/_table.html.erb (Duration: 1.3ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 1.5ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.9ms | Allocations: 148)
+  Rendered foods/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 3876)
+  Rendered layout layouts/application.html.erb (Duration: 63.7ms | Allocations: 17550)
+Completed 200 OK in 78ms (Views: 56.7ms | ActiveRecord: 9.7ms | Allocations: 22845)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2022-04-12 10:28:56 +0100
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1197)
+
+
+  
+NoMethodError (undefined method `destroy!' for nil:NilClass):
+  
+app/controllers/foods_controller.rb:27:in `destroy'
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:31:16 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 1.6ms | Allocations: 483)
+  Rendered shared/_table.html.erb (Duration: 3.2ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered foods/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 3803)
+  Rendered layout layouts/application.html.erb (Duration: 61.5ms | Allocations: 17382)
+Completed 200 OK in 75ms (Views: 57.4ms | ActiveRecord: 6.5ms | Allocations: 22676)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2022-04-12 10:31:19 +0100
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 3752)
+
+
+  
+NameError (undefined local variable or method `food' for #<FoodsController:0x0000000002d528>):
+  
+app/controllers/foods_controller.rb:27:in `destroy'
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:39:05 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (2.0ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 3.6ms | Allocations: 616)
+  Rendered shared/_table.html.erb (Duration: 0.9ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered foods/index.html.erb within layouts/application (Duration: 43.4ms | Allocations: 6369)
+  Rendered layout layouts/application.html.erb (Duration: 84.6ms | Allocations: 20390)
+Completed 200 OK in 99ms (Views: 87.7ms | ActiveRecord: 10.9ms | Allocations: 26024)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2022-04-12 10:39:07 +0100
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1178)
+
+
+  
+NoMethodError (undefined method `destroy!' for nil:NilClass):
+  
+app/controllers/foods_controller.rb:27:in `destroy'
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:39:15 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 2.4ms | Allocations: 465)
+  Rendered shared/_table.html.erb (Duration: 3.5ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.9ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered foods/index.html.erb within layouts/application (Duration: 35.4ms | Allocations: 3812)
+  Rendered layout layouts/application.html.erb (Duration: 102.9ms | Allocations: 17477)
+Completed 200 OK in 115ms (Views: 96.4ms | ActiveRecord: 10.9ms | Allocations: 22771)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2022-04-12 10:39:16 +0100
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 1178)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/foods_controller.rb:27:in `destroy'
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:39:29 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 2.3ms | Allocations: 465)
+  Rendered shared/_table.html.erb (Duration: 1.2ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.9ms | Allocations: 148)
+  Rendered foods/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 3842)
+  Rendered layout layouts/application.html.erb (Duration: 69.2ms | Allocations: 17508)
+Completed 200 OK in 87ms (Views: 65.5ms | ActiveRecord: 6.8ms | Allocations: 22805)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2022-04-12 10:39:31 +0100
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1160)
+
+
+  
+NoMethodError (undefined method `destroy!' for nil:NilClass):
+  
+app/controllers/foods_controller.rb:27:in `destroy'
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:42:17 +0100
+Processing by FoodsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 1.2ms | Allocations: 447)
+  Rendered shared/_table.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 0.7ms | Allocations: 148)
+  Rendered foods/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 3786)
+  Rendered layout layouts/application.html.erb (Duration: 62.0ms | Allocations: 17460)
+Completed 200 OK in 76ms (Views: 60.3ms | ActiveRecord: 5.5ms | Allocations: 22755)
+
+
+Started DELETE "/foods/1" for 127.0.0.1 at 2022-04-12 10:42:19 +0100
+Processing by FoodsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mFood Load (0.8ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/foods_controller.rb:27:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[36mFood Destroy (1.3ms)[0m  [1m[31mDELETE FROM "foods" WHERE "foods"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/foods_controller.rb:28:in `destroy'
+Redirected to http://127.0.0.1:3000/foods
+Completed 302 Found in 36ms (ActiveRecord: 13.6ms | Allocations: 3324)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-12 10:42:19 +0100
+Processing by FoodsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (1.2ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:15
+  Rendered shared/_table.html.erb (Duration: 2.5ms | Allocations: 356)
+  Rendered shared/_table.html.erb (Duration: 1.5ms | Allocations: 148)
+  Rendered shared/_table.html.erb (Duration: 4.2ms | Allocations: 148)
+  Rendered foods/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1539)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 3891)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 1.2ms | Allocations: 4299)
+
+
