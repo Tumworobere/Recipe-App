@@ -1,0 +1,29 @@
+@import 'variables';
+@import 'mixins';
+
+.foods-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+
+  a {
+    @include button-1;
+
+    justify-self : flex-end;
+    width: 13%;
+    text-align: center;
+    color: $primary-color-1;
+
+    &:hover {
+      background: $primary-color-1;
+      color: #fff;
+    }
+  }
+}
+
+.btn-danger {
+  width: 60%;
+  background: #fff;
+  border: solid 2px red;
+  color: red;
+}
