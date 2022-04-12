@@ -7,15 +7,15 @@
   margin-bottom: 20px;
   font-family: $font-1;
 
-  h2 {  
+  h2 {
     margin: 0;
-    align-self: flex-end
+    align-self: flex-end;
   }
 
   a {
     @include button-1;
 
-    justify-self : flex-end;
+    justify-self: flex-end;
     width: 13%;
     text-align: center;
     color: $primary-color-1;
