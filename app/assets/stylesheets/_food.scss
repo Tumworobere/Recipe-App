@@ -2,9 +2,15 @@
 @import 'mixins';
 
 .foods-btn {
-  display: flex;
-  justify-content: flex-end;
+  @include display(row, space-between, center);
+
   margin-bottom: 20px;
+  font-family: $font-1;
+
+  h2 {  
+    margin: 0;
+    align-self: flex-end
+  }
 
   a {
     @include button-1;
