@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   # Defines the routes for the Users controller
   resources :users, only: [:index]
+
+  resources :foods, except: [:update]
 end
