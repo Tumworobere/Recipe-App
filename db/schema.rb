@@ -37,5 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_075858) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.decimal "preparationTime"
+    t.decimal "cookingTime"
+    t.text "description"
+    t.boolean "public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id"
+  end
+
   add_foreign_key "foods", "users"
 end
