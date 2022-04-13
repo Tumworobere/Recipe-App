@@ -23,7 +23,7 @@
       <ul class="navbar-nav">
       <% if user_signed_in? %>
       <li class="nav-item">
-      <h6 class= "text-light" style= "padding: 11px">welcome, <%= current_user.email %></h6>
+      <h6 class= "text-light" style= "padding: 11px">welcome, <%= current_user.name %></h6>
       </li>
       <li class="nav-item">
       <%= link_to 'Sign Out', destroy_user_session_path , method: :delete, class: "nav-link" %>
