@@ -2320,3 +2320,1547 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 24ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 5536)
 
 
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-04-13 09:52:01 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 141)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1422)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 185)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4359)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 5655)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-04-13 09:52:24 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Good Teacher", "email"=>"naom.mongare@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "naom.mongare@yahoo.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Good Teacher"], ["created_at", "2022-04-13 06:52:24.452953"], ["updated_at", "2022-04-13 06:52:24.452953"], ["email", "naom.mongare@yahoo.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 280ms (ActiveRecord: 3.1ms | Allocations: 7805)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-13 09:52:24 +0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by UsersController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 951)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4056)
+Completed 200 OK in 20ms (Views: 16.2ms | ActiveRecord: 0.6ms | Allocations: 4903)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 09:52:42 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  Rendered inventories/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1328)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 4033)
+Completed 200 OK in 36ms (Views: 19.4ms | ActiveRecord: 1.4ms | Allocations: 6407)
+
+
+Started DELETE "/inventories/3" for 127.0.0.1 at 2022-04-13 09:52:49 +0300
+Processing by InventoriesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms | Allocations: 5933)
+
+
+  
+CanCan::AccessDenied (You are not authorized to access this page.):
+  
+cancancan (3.3.0) lib/cancan/ability.rb:180:in `authorize!'
+cancancan (3.3.0) lib/cancan/controller_additions.rb:339:in `authorize!'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:40:in `authorize_resource'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:34:in `load_and_authorize_resource'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:17:in `block in add_before_action'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:467:in `instance_exec'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:467:in `block in make_lambda'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.2.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-04-13 09:53:15 +0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 669)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 3413)
+Completed 200 OK in 21ms (Views: 17.6ms | ActiveRecord: 0.5ms | Allocations: 3720)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-13 09:53:15 +0300
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:3
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 669)
+  Rendered shared/_header.html.erb (Duration: 8.3ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 3401)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.4ms | Allocations: 3704)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 09:53:20 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  Rendered inventories/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1296)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 4010)
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 1.0ms | Allocations: 6184)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 09:58:08 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2805)
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 6474)
+Completed 200 OK in 37ms (Views: 25.7ms | ActiveRecord: 2.0ms | Allocations: 9159)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 09:58:53 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2787)
+  Rendered shared/_header.html.erb (Duration: 1.4ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 6456)
+Completed 200 OK in 41ms (Views: 31.3ms | ActiveRecord: 1.8ms | Allocations: 9271)
+
+
+Started GET "/inventories/new" for 127.0.0.1 at 2022-04-13 10:00:48 +0300
+Processing by InventoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/new.html.erb within layouts/application
+  Rendered inventories/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 544)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 3249)
+Completed 200 OK in 31ms (Views: 18.7ms | ActiveRecord: 0.5ms | Allocations: 5617)
+
+
+Started POST "/inventories" for 127.0.0.1 at 2022-04-13 10:01:12 +0300
+Processing by InventoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "inventory"=>{"name"=>"Life recipe", "description"=>"A hack to life itself"}, "commit"=>"Add Inventory"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/inventories_controller.rb:20:in `block in create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:20:in `block in create'
+  [1m[36mInventory Create (1.3ms)[0m  [1m[32mINSERT INTO "inventories" ("name", "user_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Life recipe"], ["user_id", 2], ["created_at", "2022-04-13 07:01:12.757694"], ["updated_at", "2022-04-13 07:01:12.757694"], ["description", "A hack to life itself"]]
+  ↳ app/controllers/inventories_controller.rb:20:in `block in create'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/inventories_controller.rb:20:in `block in create'
+Redirected to http://localhost:3000/inventories
+Completed 302 Found in 29ms (ActiveRecord: 7.4ms | Allocations: 6106)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:01:12 +0300
+Processing by InventoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 3233)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 5988)
+Completed 200 OK in 35ms (Views: 25.8ms | ActiveRecord: 2.1ms | Allocations: 8203)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-13 10:02:02 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (2.0ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:16
+  Rendered foods/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1010)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 176)
+  Rendered layout layouts/application.html.erb (Duration: 50.2ms | Allocations: 15794)
+Completed 200 OK in 89ms (Views: 55.0ms | ActiveRecord: 8.0ms | Allocations: 24931)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:02:06 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.6ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 29.7ms | Allocations: 5734)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 8686)
+Completed 200 OK in 66ms (Views: 38.1ms | ActiveRecord: 8.3ms | Allocations: 12633)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:03:09 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 3853)
+  Rendered shared/_header.html.erb (Duration: 1.8ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 7521)
+Completed 200 OK in 46ms (Views: 35.9ms | ActiveRecord: 2.0ms | Allocations: 10371)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:05:06 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  Rendered inventories/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1387)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1482)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms | Allocations: 4291)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="foods-btn">
+  <h2>Inventory List</h2>
+  <%= link_to 'Add Inventory', new_inventory_path %>
+</div>
+<% if @inventories.empty? %>
+  <p>No inventories yet.</p>
+<% else %>
+<ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+<% @inventories.each do |inv| %>
+    <li class="card mb-3 w-100 mt-4" >
+    <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
+      <div>
+      <div class="row g-0">
+      <div class="col-md-5">
+      <h4 class="card-title text-muted"><%= inv.name %></h4>
+      <% if can? :destroy, inv %>
+      <%= link_to 'Remove', inv, data: { turbo_method: :delete, turbo_confirm: 'are you sure?' , type='submit' %>
+      <% end %>
+      </div>
+      <div class="col-md-7">
+      <div class="card-body">
+      <p class="card-text"><%= inv.description %></p>
+      </div>
+      </div>
+      </div>
+      </div>
+    </li>
+    <% end %>
+    <% end %>
+</ul>
+<% end %>
+):
+1:    <div class="foods-btn">
+2:      <h2>Inventory List</h2>
+3:      <%= link_to 'Add Inventory', new_inventory_path %>
+4:    </div>
+5:    <% if @inventories.empty? %>
+6:      <p>No inventories yet.</p>
+7:    <% else %>
+8:    <ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+9:    <% @inventories.each do |inv| %>
+10:        <li class="card mb-3 w-100 mt-4" >
+11:        <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
+12:          <div>
+13:          <div class="row g-0">
+14:          <div class="col-md-5">
+15:          <h4 class="card-title text-muted"><%= inv.name %></h4>
+16:          <% if can? :destroy, inv %>
+17:          <%= link_to 'Remove', inv, data: { turbo_method: :delete, turbo_confirm: 'are you sure?' , type='submit' %>
+18:          <% end %>
+19:          </div>
+20:          <div class="col-md-7">
+21:          <div class="card-body">
+22:          <p class="card-text"><%= inv.description %></p>
+23:          </div>
+24:          </div>
+25:          </div>
+26:          </div>
+27:        </li>
+28:        <% end %>
+29:        <% end %>
+30:    </ul>
+31:    <% end %>
+  
+app/views/inventories/index.html.erb:17: syntax error, unexpected ')', expecting =>
+app/views/inventories/index.html.erb:18: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:31: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:33: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:17: syntax error, unexpected ')', expecting =>
+app/views/inventories/index.html.erb:18: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:31: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:33: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:17: syntax error, unexpected ')', expecting =>
+app/views/inventories/index.html.erb:18: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:31: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:33: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:17: syntax error, unexpected ')', expecting =>
+app/views/inventories/index.html.erb:18: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:31: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:33: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:17: syntax error, unexpected ')', expecting =>
+app/views/inventories/index.html.erb:18: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:31: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:33: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:17: syntax error, unexpected ')', expecting =>
+app/views/inventories/index.html.erb:18: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:31: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:33: syntax error, unexpected `end', expecting ')'
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:05:41 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 3856)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 7544)
+Completed 200 OK in 61ms (Views: 45.0ms | ActiveRecord: 2.2ms | Allocations: 10507)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:05:57 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 22.2ms | Allocations: 3857)
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 7548)
+Completed 200 OK in 55ms (Views: 44.6ms | ActiveRecord: 2.0ms | Allocations: 10348)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:05:59 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.7ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 3219)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 5924)
+Completed 200 OK in 40ms (Views: 30.3ms | ActiveRecord: 2.6ms | Allocations: 8195)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:08:52 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 3864)
+  Rendered shared/_header.html.erb (Duration: 2.0ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 7532)
+Completed 200 OK in 47ms (Views: 36.2ms | ActiveRecord: 2.1ms | Allocations: 10213)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:11:13 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (1.0ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 3936)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 7604)
+Completed 200 OK in 55ms (Views: 40.1ms | ActiveRecord: 2.5ms | Allocations: 10431)
+
+
+Started GET "/inventories/3" for 127.0.0.1 at 2022-04-13 10:11:22 +0300
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.9ms | Allocations: 5145)
+
+
+  
+CanCan::AccessDenied (You are not authorized to access this page.):
+  
+cancancan (3.3.0) lib/cancan/ability.rb:180:in `authorize!'
+cancancan (3.3.0) lib/cancan/controller_additions.rb:339:in `authorize!'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:40:in `authorize_resource'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:34:in `load_and_authorize_resource'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:17:in `block in add_before_action'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:467:in `instance_exec'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:467:in `block in make_lambda'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.2.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:11:24 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3259)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 5984)
+Completed 200 OK in 35ms (Views: 26.3ms | ActiveRecord: 2.2ms | Allocations: 8171)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:15:08 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 3936)
+  Rendered layout layouts/application.html.erb (Duration: 124.5ms | Allocations: 9293)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 1.9ms | Allocations: 11954)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: bootstrap.
+        on line 1:1 of app/assets/stylesheets/_mixins.scss
+        from line 18:1 of app/assets/stylesheets/application.scss
+>> @import "bootstrap";
+
+   ^
+):
+    12:     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    13:     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    14: 
+    15:     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track" => "reload" %>
+    16:     <%= javascript_importmap_tags %>
+    17:   </head>
+    18: 
+  
+app/assets/stylesheets/_mixins.scss:1
+app/views/layouts/application.html.erb:15
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:19:41 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3936)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 7674)
+Completed 200 OK in 44ms (Views: 32.3ms | ActiveRecord: 1.7ms | Allocations: 10501)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:20:30 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 3936)
+  Rendered shared/_header.html.erb (Duration: 1.8ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 7604)
+Completed 200 OK in 48ms (Views: 38.2ms | ActiveRecord: 1.8ms | Allocations: 10410)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:20:44 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 3936)
+  Rendered shared/_header.html.erb (Duration: 1.9ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 7604)
+Completed 200 OK in 47ms (Views: 37.3ms | ActiveRecord: 2.0ms | Allocations: 10413)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:20:59 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 3936)
+  Rendered shared/_header.html.erb (Duration: 1.1ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 40.3ms | Allocations: 7604)
+Completed 200 OK in 60ms (Views: 50.7ms | ActiveRecord: 2.1ms | Allocations: 10434)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:21:33 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.6ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 3259)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 5964)
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 1.9ms | Allocations: 8232)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:29:25 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (3.8ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 18.6ms | Allocations: 3982)
+  Rendered shared/_header.html.erb (Duration: 1.0ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 7650)
+Completed 200 OK in 159ms (Views: 32.4ms | ActiveRecord: 18.4ms | Allocations: 12773)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:29:57 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3259)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 5973)
+Completed 200 OK in 33ms (Views: 23.2ms | ActiveRecord: 2.4ms | Allocations: 8250)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-13 10:29:58 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (2.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:16
+  Rendered foods/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 953)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 3897)
+Completed 200 OK in 26ms (Views: 16.9ms | ActiveRecord: 2.7ms | Allocations: 6405)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:30:00 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 3314)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 6019)
+Completed 200 OK in 34ms (Views: 25.9ms | ActiveRecord: 2.1ms | Allocations: 8380)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:30:01 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3259)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 5964)
+Completed 200 OK in 34ms (Views: 25.1ms | ActiveRecord: 1.8ms | Allocations: 8108)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-13 10:30:02 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:16
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 611)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 3316)
+Completed 200 OK in 43ms (Views: 18.4ms | ActiveRecord: 0.9ms | Allocations: 5466)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:30:03 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.6ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3259)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 5973)
+Completed 200 OK in 40ms (Views: 30.5ms | ActiveRecord: 2.3ms | Allocations: 8138)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:30:04 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 3259)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 29.6ms | Allocations: 5964)
+Completed 200 OK in 37ms (Views: 29.0ms | ActiveRecord: 2.2ms | Allocations: 8105)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:31:06 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  Rendered inventories/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1421)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1516)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms | Allocations: 4213)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="foods-btn">
+  <h2>Inventory List</h2>
+  <%= link_to 'Add Inventory', new_inventory_path %>
+</div>
+<% if @inventories.empty? %>
+  <p>No inventories yet.</p>
+<% else %>
+<ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+<% @inventories.each do |inv| %>
+    <li class="card mb-3 w-100 mt-4 shadow-lg p-3 bg-light rounded" >
+    <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
+      <div>
+      <div class="row g-0">
+      <div class="col-md-5">
+      <h4 class="card-title text-muted"><%= inv.name %></h4>
+      <% if can? :destroy, inv %>
+      <%= link_to 'Remove', inv, data: { turbo_method: :delete, turbo_confirm: 'are you sure?' },
+       class: "btn btn-outline-danger", type:"button" %>
+      <% else %>
+      <%= link_to 'View', inv, class: "btn btn-outline-success", type:"button", 
+      style:"width: 3rem; %>
+      <% end %>
+      </div>
+      <div class="col-md-7">
+      <div class="card-body">
+      <p class="card-text"><%= inv.description %></p>
+      </div>
+      </div>
+      </div>
+      </div>
+    </li>
+    <% end %>
+    <% end %>
+</ul>
+<% end %>
+):
+1:    <div class="foods-btn">
+2:      <h2>Inventory List</h2>
+3:      <%= link_to 'Add Inventory', new_inventory_path %>
+4:    </div>
+5:    <% if @inventories.empty? %>
+6:      <p>No inventories yet.</p>
+7:    <% else %>
+8:    <ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+9:    <% @inventories.each do |inv| %>
+10:        <li class="card mb-3 w-100 mt-4 shadow-lg p-3 bg-light rounded" >
+11:        <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
+12:          <div>
+13:          <div class="row g-0">
+14:          <div class="col-md-5">
+15:          <h4 class="card-title text-muted"><%= inv.name %></h4>
+16:          <% if can? :destroy, inv %>
+17:          <%= link_to 'Remove', inv, data: { turbo_method: :delete, turbo_confirm: 'are you sure?' },
+18:           class: "btn btn-outline-danger", type:"button" %>
+19:          <% else %>
+20:          <%= link_to 'View', inv, class: "btn btn-outline-success", type:"button", 
+21:          style:"width: 3rem; %>
+22:          <% end %>
+23:          </div>
+24:          <div class="col-md-7">
+25:          <div class="card-body">
+26:          <p class="card-text"><%= inv.description %></p>
+27:          </div>
+28:          </div>
+29:          </div>
+30:          </div>
+31:        </li>
+32:        <% end %>
+33:        <% end %>
+34:    </ul>
+35:    <% end %>
+  
+app/views/inventories/index.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:26: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:37: unterminated string meets end of file
+app/views/inventories/index.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:26: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:37: unterminated string meets end of file
+app/views/inventories/index.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:26: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:37: unterminated string meets end of file
+app/views/inventories/index.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:26: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:37: unterminated string meets end of file
+app/views/inventories/index.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:26: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:37: unterminated string meets end of file
+app/views/inventories/index.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:24: syntax error, unexpected string literal, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:25: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:26: syntax error, unexpected local variable or method, expecting ')'
+app/views/inventories/index.html.erb:26: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/inventories/index.html.erb:37: unterminated string meets end of file
+app/views/inventories/index.html.erb:37: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:32:24 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  Rendered inventories/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1424)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1519)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms | Allocations: 4464)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="foods-btn">
+  <h2>Inventory List</h2>
+  <%= link_to 'Add Inventory', new_inventory_path %>
+</div>
+<% if @inventories.empty? %>
+  <p>No inventories yet.</p>
+<% else %>
+<ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+<% @inventories.each do |inv| %>
+    <li class="card mb-3 w-100 mt-4 shadow-lg p-3 bg-light rounded" >
+    <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
+      <div>
+      <div class="row g-0">
+      <div class="col-md-5">
+      <h4 class="card-title text-muted"><%= inv.name %></h4>
+      <% if can? :destroy, inv %>
+      <%= link_to 'Remove', inv, data: { turbo_method: :delete, turbo_confirm: 'are you sure?' },
+       class: "btn btn-outline-danger", type:"button" %>
+      <% else %>
+      <%= link_to 'View', inv, class: "btn btn-outline-success", type:"button", 
+       %>
+      <% end %>
+      </div>
+      <div class="col-md-7">
+      <div class="card-body">
+      <p class="card-text"><%= inv.description %></p>
+      </div>
+      </div>
+      </div>
+      </div>
+    </li>
+    <% end %>
+    <% end %>
+</ul>
+<% end %>
+):
+1:    <div class="foods-btn">
+2:      <h2>Inventory List</h2>
+3:      <%= link_to 'Add Inventory', new_inventory_path %>
+4:    </div>
+5:    <% if @inventories.empty? %>
+6:      <p>No inventories yet.</p>
+7:    <% else %>
+8:    <ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+9:    <% @inventories.each do |inv| %>
+10:        <li class="card mb-3 w-100 mt-4 shadow-lg p-3 bg-light rounded" >
+11:        <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
+12:          <div>
+13:          <div class="row g-0">
+14:          <div class="col-md-5">
+15:          <h4 class="card-title text-muted"><%= inv.name %></h4>
+16:          <% if can? :destroy, inv %>
+17:          <%= link_to 'Remove', inv, data: { turbo_method: :delete, turbo_confirm: 'are you sure?' },
+18:           class: "btn btn-outline-danger", type:"button" %>
+19:          <% else %>
+20:          <%= link_to 'View', inv, class: "btn btn-outline-success", type:"button", 
+21:           %>
+22:          <% end %>
+23:          </div>
+24:          <div class="col-md-7">
+25:          <div class="card-body">
+26:          <p class="card-text"><%= inv.description %></p>
+27:          </div>
+28:          </div>
+29:          </div>
+30:          </div>
+31:        </li>
+32:        <% end %>
+33:        <% end %>
+34:    </ul>
+35:    <% end %>
+  
+app/views/inventories/index.html.erb:21: syntax error, unexpected ')'
+app/views/inventories/index.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:32: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:37: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:21: syntax error, unexpected ')'
+app/views/inventories/index.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:32: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:37: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:21: syntax error, unexpected ')'
+app/views/inventories/index.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:32: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:37: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:21: syntax error, unexpected ')'
+app/views/inventories/index.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:32: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:37: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:21: syntax error, unexpected ')'
+app/views/inventories/index.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:32: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:37: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:21: syntax error, unexpected ')'
+app/views/inventories/index.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:32: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/inventories/index.html.erb:37: syntax error, unexpected `end', expecting ')'
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:32:40 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (1.0ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 3935)
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 7612)
+Completed 200 OK in 53ms (Views: 42.5ms | ActiveRecord: 2.5ms | Allocations: 10576)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:33:06 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3936)
+  Rendered shared/_header.html.erb (Duration: 1.5ms | Allocations: 524)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 7616)
+Completed 200 OK in 49ms (Views: 39.4ms | ActiveRecord: 1.6ms | Allocations: 10425)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:33:14 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 3936)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 7604)
+Completed 200 OK in 42ms (Views: 32.7ms | ActiveRecord: 1.9ms | Allocations: 10413)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:33:55 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 3942)
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 7612)
+Completed 200 OK in 40ms (Views: 30.9ms | ActiveRecord: 1.6ms | Allocations: 10403)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:34:08 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.8ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 16.1ms | Allocations: 3942)
+  Rendered shared/_header.html.erb (Duration: 1.1ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 7610)
+Completed 200 OK in 44ms (Views: 34.8ms | ActiveRecord: 2.2ms | Allocations: 10407)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:34:19 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 3942)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 7610)
+Completed 200 OK in 41ms (Views: 31.8ms | ActiveRecord: 1.7ms | Allocations: 10425)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:34:30 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3942)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 7610)
+Completed 200 OK in 39ms (Views: 29.9ms | ActiveRecord: 1.7ms | Allocations: 10416)
+
+
+Started GET "/inventories/3" for 127.0.0.1 at 2022-04-13 10:35:45 +0300
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.3ms | Allocations: 4580)
+
+
+  
+CanCan::AccessDenied (You are not authorized to access this page.):
+  
+cancancan (3.3.0) lib/cancan/ability.rb:180:in `authorize!'
+cancancan (3.3.0) lib/cancan/controller_additions.rb:339:in `authorize!'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:40:in `authorize_resource'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:34:in `load_and_authorize_resource'
+cancancan (3.3.0) lib/cancan/controller_resource.rb:17:in `block in add_before_action'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:467:in `instance_exec'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:467:in `block in make_lambda'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.2.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.2.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:36:02 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3935)
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 519)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 7610)
+Completed 200 OK in 38ms (Views: 29.4ms | ActiveRecord: 1.8ms | Allocations: 10276)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-13 10:36:04 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:16
+  Rendered foods/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 950)
+  Rendered shared/_header.html.erb (Duration: 1.3ms | Allocations: 171)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 3894)
+Completed 200 OK in 30ms (Views: 20.8ms | ActiveRecord: 0.5ms | Allocations: 6515)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:36:06 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 3309)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 6014)
+Completed 200 OK in 35ms (Views: 25.5ms | ActiveRecord: 1.6ms | Allocations: 8391)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-13 10:36:09 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:16
+  Rendered foods/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 611)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 3316)
+Completed 200 OK in 40ms (Views: 28.9ms | ActiveRecord: 0.7ms | Allocations: 5460)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-13 10:36:11 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:16
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 611)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 3316)
+Completed 200 OK in 28ms (Views: 18.7ms | ActiveRecord: 1.0ms | Allocations: 5473)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:36:12 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 3254)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 5959)
+Completed 200 OK in 53ms (Views: 41.2ms | ActiveRecord: 2.4ms | Allocations: 8124)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-13 10:36:13 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:16
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 611)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3316)
+Completed 200 OK in 25ms (Views: 15.0ms | ActiveRecord: 0.6ms | Allocations: 5455)
+
+
+Started GET "/foods" for 127.0.0.1 at 2022-04-13 10:36:14 +0300
+Processing by FoodsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  [1m[36mFood Load (0.4ms)[0m  [1m[34mSELECT "foods".* FROM "foods"[0m
+  ↳ app/views/foods/index.html.erb:16
+  Rendered foods/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 611)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 3316)
+Completed 200 OK in 31ms (Views: 19.1ms | ActiveRecord: 0.7ms | Allocations: 5458)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:36:15 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3254)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 5959)
+Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 1.7ms | Allocations: 8115)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 10:36:38 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3934)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 519)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 7600)
+Completed 200 OK in 42ms (Views: 32.4ms | ActiveRecord: 1.7ms | Allocations: 10304)
+
+
