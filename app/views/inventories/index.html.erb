@@ -13,7 +13,7 @@
       <div class="row g-0">
       <div class="col-md-5">
       <h4 class="card-title text-muted"><%= inv.name %></h4>
-      <%= link_to 'Remove', inventory_path(inv) , method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Delete', inv, data: { turbo_method: :delete, turbo_confirm: 'are you sure?' }, class: 'button is-danger' %>
       </div>
       <div class="col-md-7">
       <div class="card-body">

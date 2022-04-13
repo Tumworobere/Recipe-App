@@ -31,7 +31,7 @@ class InventoriesController < ApplicationController
     @inventory.destroy!
 
     respond_to do |format|
-      format.html { redirect_to inventorys_url, notice: 'Inventory was successfully deleted.' }
+      format.html { redirect_to inventories_url, notice: 'Inventory was successfully deleted.' }
     end
   end
 
