@@ -1,6 +1,6 @@
 <div class="foods-btn">
   <h2><%= @inventory.name %></h2>
-  <%= link_to 'Add Food', new_inventory_inventory_food_path %>
+  <%= link_to 'Add Food', inventories_path %>
 </div>
 <% if @foods.empty? %>
 <p>No foods yet. here is the iventory decription though!</p>
