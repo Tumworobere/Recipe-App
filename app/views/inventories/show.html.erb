@@ -1,8 +1,11 @@
 <div class="foods-btn">
-  <h2>Food List</h2>
+  <h2><%= @inventory.name %></h2>
   <%= link_to 'Add Food', new_food_path %>
 </div>
-
+<% if @foods.empty? %>
+<p>No foods yet. here is the iventory decription though!</p>
+<p> <%= @inventory.description %></p>
+<% else %>
 <table class="table table-hover table-striped table-bordered">
   <thead class="bg-color">
     <tr>
@@ -15,7 +18,7 @@
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.food %></td>
-        <td><%= food.quantity %></td>
+        <td><%= 0 %></td>
         <td>
         <% if can? :destroy, food %>
           <%= button_to "Delete Food", food, method: :delete, class:"btn btn-danger"%>
@@ -25,3 +28,4 @@
     <% end %>
   </tbody>
 </table>
+<% end %>

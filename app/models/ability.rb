@@ -5,5 +5,6 @@ class Ability
     user ||= User.new # guest user (not logged in)
     can :manage, Food, user: user if user.present?
     can :manage, Inventory, user: user if user.present?
+    can :read, :all if user.present? 
   end
 end
