@@ -1,3 +1,7 @@
+<div class="foods-btn">
+  <h2>Inventory List</h2>
+  <%= link_to 'Add Inventory', new_inventory_path %>
+</div>
 <ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75"> 
     <li class="card mb-3 w-75 mt-4" >
     <%= link_to inventories_path(@inventories.id), style:"text-decoration: none; color: black" do %>
