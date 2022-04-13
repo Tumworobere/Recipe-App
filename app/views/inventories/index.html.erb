@@ -7,13 +7,13 @@
 <% else %>
 <ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
 <% @inventories.each do |inv| %>
-    <li class="card mb-3 w-75 mt-4" >
+    <li class="card mb-3 w-100 mt-4" >
     <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
       <div>
       <div class="row g-0">
       <div class="col-md-5">
-      <h2 class="card-title"><%= inv.name %></h2>
-      <%= link_to 'Destroy', inv, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <h4 class="card-title text-muted"><%= inv.name %></h4>
+      <%= link_to 'Remove', inventory_path(inv) , method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
       <div class="col-md-7">
       <div class="card-body">

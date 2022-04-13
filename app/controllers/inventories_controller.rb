@@ -25,6 +25,16 @@ class InventoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @inventory = Inventory.find(params[:id])
+    authorize! :destroy, @inventory
+    @inventory.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to inventorys_url, notice: 'Inventory was successfully deleted.' }
+    end
+  end
+
   private
 
   def inventory_params
