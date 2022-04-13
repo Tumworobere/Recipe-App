@@ -21,10 +21,13 @@
         <td><%= f.quantity %></td>
         <td>
         <% if can? :destroy, f %>
-          <%= button_to "Delete Food", inventory_path, method: :delete, class:"btn btn-danger"%>
+        <%= link_to 'Remove', inventory_inventory_food_path(:inventory_id => @inventory.id, :id => f.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+        class: "btn btn-outline-danger", type:"button" %>
+        <% else %>
+        <%= link_to 'View', inventory_inventory_food_path(:inventory_id => @inventory.id, :id => f.id), class: "btn btn-outline-success", type:"button", style: "width: 5.5rem" %>
         <% end %>
         </td>
-</tr>
+      </tr>
     <% end %>
   </tbody>
 </table>

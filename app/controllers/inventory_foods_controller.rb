@@ -17,7 +17,7 @@ class InventoryFoodsController < ApplicationController
 
     respond_to do |format|
       if @inventory_food.save
-        format.html { redirect_to inventories_path, notice: 'Inventory food created successfully' }
+        format.html { redirect_to inventory_path(@current_inventory.id), notice: 'Inventory food created successfully' }
       else
         format.html { render :new, status: :unprocessable_entity, notice: 'Inventory food an error occured' }
       end
