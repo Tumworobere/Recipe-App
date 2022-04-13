@@ -1,0 +1,34 @@
+<div class="foods-btn">
+  <h2>Inventory List</h2>
+  <%= link_to 'Add Inventory', new_inventory_path %>
+</div>
+<% if @inventories.empty? %>
+  <p>No inventories yet.</p>
+<% else %>
+<ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+<% @inventories.each do |inv| %>
+    <li class="card mb-3 w-100 mt-4 shadow-lg p-3 bg-light rounded" >
+    <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
+      <div>
+      <div class="row g-0">
+      <div class="col-md-5">
+      <h4 class="card-title text-muted"><%= inv.name %></h4>
+      <% if can? :destroy, inv %>
+      <%= link_to 'Remove', inv, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+       class: "btn btn-outline-danger", type:"button" %>
+      <% else %>
+      <%= link_to 'View', foods_path, class: "btn btn-outline-success", type:"button", style: "width: 5.5rem" %>
+      <% end %>
+      </div>
+      <div class="col-md-7">
+      <div class="card-body">
+      <p class="card-text"><%= inv.description %></p>
+      </div>
+      </div>
+      </div>
+      </div>
+    </li>
+    <% end %>
+    <% end %>
+</ul>
+<% end %>
