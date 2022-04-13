@@ -18,7 +18,7 @@ class InventoriesController < ApplicationController
 
     respond_to do |format|
       if @inventory.save
-        format.html { redirect_to inventories_path, notice: 'Inventory was created successfully' }
+        format.html { redirect_to inventories_path, notice: 'Inventory created successfully' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -31,7 +31,7 @@ class InventoriesController < ApplicationController
     @inventory.destroy!
 
     respond_to do |format|
-      format.html { redirect_to inventories_url, notice: 'Inventory was successfully deleted.' }
+      format.html { redirect_to inventories_url, notice: 'Inventory successfully deleted.' }
     end
   end
 
