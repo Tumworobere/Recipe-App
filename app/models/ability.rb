@@ -6,6 +6,6 @@ class Ability
     can :manage, Food, user: user if user.present?
     can :manage, Inventory, user: user if user.present?
     can :manage, InventoryFood, user: user if user.present?
-    can :read, :all if user.present? 
+    can :manage, :all if user.present? 
   end
 end

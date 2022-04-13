@@ -1,0 +1,21 @@
+<div  class="form-heading">
+  <h2>Add New Inventory Food <%= @foods.length %> </h2>
+  <hr style="margin: 5px auto;">
+</div>
+
+<div class="form-goup">
+  <%= form_with model: @InventoryFood do |f| %>
+    <div class="field">
+      <%= f.text_field :quantity, placeholder: "Input quantity", autofocus: true %>
+    </div>
+
+    <div class="field">
+  <%= f.label "Foods List" %>
+  <%= f.collection_select(:food_id, @foods , :id, :food, { :prompt => 'Add food to inventory', 
+  :selected => @inventory1.food_id }, { class: 'form-control w-50' }) %>
+</div>
+    <div class="actions">
+      <%= f.submit "Add inventory food" %>
+    </div>
+  <% end %>
+<div>

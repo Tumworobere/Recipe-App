@@ -2,11 +2,12 @@ class InventoryFoodsController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @inventory_food = InventoryFood.new
+    @inventory1 = InventoryFood.new
+    @foods = Food.all
   end
 
   def create
-    @inventory_food = current_user.inventories.new(inventory_food_params)
+    @inventory_food = current_user.inventory_foods.new(inventory_food_params)
 
     respond_to do |format|
       if @inventory_food.save
@@ -29,7 +30,7 @@ class InventoryFoodsController < ApplicationController
 
   private
 
-  def inventory_params
-    params.require(:inventory_food).permit(:food, :inventory, :quantity)
+  def inventory_food_params
+    params.require(:inventory_food).permit(:food_id, :quantity)
   end
 end
