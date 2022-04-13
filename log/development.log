@@ -5947,3 +5947,56 @@ Processing by InventoriesController#index as HTML
 Completed 200 OK in 39ms (Views: 30.4ms | ActiveRecord: 2.2ms | Allocations: 8108)
 
 
+Started GET "/inventories" for 127.0.0.1 at 2022-04-13 15:18:54 +0300
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/views/inventories/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:16
+  Rendered inventories/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 3883)
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 522)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 7580)
+Completed 200 OK in 51ms (Views: 39.9ms | ActiveRecord: 2.0ms | Allocations: 10249)
+
+
+Started GET "/inventories/3" for 127.0.0.1 at 2022-04-13 15:18:57 +0300
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Inventory Load (0.0ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/show.html.erb within layouts/application
+  [1m[36mFood Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "foods" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/show.html.erb:5
+  Rendered inventories/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 901)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 3612)
+Completed 200 OK in 49ms (Views: 28.8ms | ActiveRecord: 4.3ms | Allocations: 7131)
+
+
+Started GET "/inventories/4" for 127.0.0.1 at 2022-04-13 15:19:01 +0300
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Inventory Load (0.0ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/show.html.erb within layouts/application
+  [1m[36mFood Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "foods" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/show.html.erb:5
+  Rendered inventories/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 589)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 3294)
+Completed 200 OK in 34ms (Views: 22.4ms | ActiveRecord: 1.2ms | Allocations: 6648)
+
+
