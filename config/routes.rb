@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   # Defines the routes for the Users controller
   resources :users, only: [:index]
   resources :foods, except: [:update]
+
+
+  # Defines the routes for the inventory and inventory_foods controller
+  resources :inventories, except: %i[update] do
+    resources :inventory_foods, only: %i[update]
+      end 
 end
