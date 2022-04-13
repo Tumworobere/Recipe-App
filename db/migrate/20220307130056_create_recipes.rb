@@ -5,7 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[7.0]
       t.decimal :preparationTime
       t.decimal :cookingTime
       t.text :description
-      t.boolean :public
+      t.boolean :public, :default => true
 
       t.timestamps
       t.references :user, foreign_key: true
