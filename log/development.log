@@ -4648,3 +4648,42 @@ Processing by FoodsController#index as HTML
 Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.4ms | Allocations: 4430)
 
 
+Started GET "/" for 127.0.0.1 at 2022-04-13 13:47:52 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 122)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 521)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3205)
+Completed 200 OK in 15ms (Views: 12.9ms | Allocations: 3675)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-04-13 14:03:20 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (Allocations: 382)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 507)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 3209)
+Completed 200 OK in 20ms (Views: 17.2ms | Allocations: 3744)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-04-13 14:03:24 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 505)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 3215)
+Completed 200 OK in 20ms (Views: 17.6ms | Allocations: 3837)
+
+

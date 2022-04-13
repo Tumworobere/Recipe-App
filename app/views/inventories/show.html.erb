@@ -1,0 +1,27 @@
+<div class="foods-btn">
+  <h2>Food List</h2>
+  <%= link_to 'Add Food', new_food_path %>
+</div>
+
+<table class="table table-hover table-striped table-bordered">
+  <thead class="bg-color">
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.food %></td>
+        <td><%= food.quantity %></td>
+        <td>
+        <% if can? :destroy, food %>
+          <%= button_to "Delete Food", food, method: :delete, class:"btn btn-danger"%>
+        <% end %>
+        </td>
+</tr>
+    <% end %>
+  </tbody>
+</table>
