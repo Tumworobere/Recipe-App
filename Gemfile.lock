@@ -100,10 +100,7 @@ GEM
     erubi (1.10.0)
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
-<<<<<<< HEAD
     ffi (1.15.5-x64-mingw32)
-=======
->>>>>>> 9cf5bfc71eb7e81e1481cddbc6b0e557f354c47f
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
