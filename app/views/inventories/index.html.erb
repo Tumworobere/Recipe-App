@@ -2,24 +2,28 @@
   <h2>Inventory List</h2>
   <%= link_to 'Add Inventory', new_inventory_path %>
 </div>
-<ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75"> 
+<% if @inventories.empty? %>
+  <p>No inventories yet.</p>
+<% else %>
+<ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+<% @inventories.each do |inv| %>
     <li class="card mb-3 w-75 mt-4" >
-    <%= link_to inventories_path(@inventories.id), style:"text-decoration: none; color: black" do %>
+    <%= link_to inventories_path(inv.id), style:"text-decoration: none; color: black" do %>
       <div>
       <div class="row g-0">
-      <div class="col-md-2">
-      <h2 class="card-title"><%= @inventories.name %></h2>
-      <div class="actions">
-      <%= destroy "Remove" %>
-    </div>
+      <div class="col-md-5">
+      <h2 class="card-title"><%= inv.name %></h2>
+      <%= link_to 'Destroy', inv, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
-      <div class="col-md-10">
+      <div class="col-md-7">
       <div class="card-body">
-      <p class="card-text"><%= @inventories.description %></p>
+      <p class="card-text"><%= inv.description %></p>
       </div>
       </div>
       </div>
       </div>
     </li>
     <% end %>
+    <% end %>
 </ul>
+<% end %>

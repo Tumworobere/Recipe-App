@@ -5,6 +5,10 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.all
   end
 
+  def show
+    @user_inventory = Inventory.find(params[:id])
+  end
+
   def new
     @inventory = Inventory.new
   end
