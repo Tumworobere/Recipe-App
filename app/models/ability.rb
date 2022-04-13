@@ -3,7 +3,10 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    can :manage, Food, user: user if user.present?
-    can :manage, Inventory, user: user if user.present?
+    if user.present?
+      can :manage, Food, user: user 
+      can :manage, Inventory, user: user
+      can :manage, Recipe, user: user
+    end
   end
 end
