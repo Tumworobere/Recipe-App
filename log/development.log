@@ -6000,3 +6000,20 @@ Processing by InventoriesController#show as HTML
 Completed 200 OK in 34ms (Views: 22.4ms | ActiveRecord: 1.2ms | Allocations: 6648)
 
 
+Started GET "/inventories/4" for 127.0.0.1 at 2022-04-13 15:25:25 +0300
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mInventory Load (2.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Inventory Load (0.0ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories" WHERE "inventories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:9:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/show.html.erb within layouts/application
+  [1m[36mFood Exists? (5.4ms)[0m  [1m[34mSELECT 1 AS one FROM "foods" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/show.html.erb:5
+  Rendered inventories/show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 609)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 3314)
+Completed 200 OK in 166ms (Views: 17.7ms | ActiveRecord: 21.3ms | Allocations: 9133)
+
+
