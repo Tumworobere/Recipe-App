@@ -1,0 +1,21 @@
+<ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75"> 
+    <li class="card mb-3 w-75 mt-4" >
+    <%= link_to inventories_path(@inventories.id), style:"text-decoration: none; color: black" do %>
+      <div>
+      <div class="row g-0">
+      <div class="col-md-2">
+      <h2 class="card-title"><%= @inventories.name %></h2>
+      <div class="actions">
+      <%= destroy "Remove" %>
+    </div>
+      </div>
+      <div class="col-md-10">
+      <div class="card-body">
+      <p class="card-text"><%= @inventories.description %></p>
+      </div>
+      </div>
+      </div>
+      </div>
+    </li>
+    <% end %>
+</ul>
