@@ -1,6 +1,6 @@
 <div class="foods-btn">
   <h2><%= @inventory.name %></h2>
-  <%= link_to 'Add Food', inventories_path %>
+  <%= link_to 'Add Food', new_inventory_inventory_food_path(:inventory_id =>  @inventory.id )%>
 </div>
 <% if @foods.empty? %>
 <p>No foods yet. here is the iventory decription though!</p>
@@ -15,13 +15,13 @@
     </tr>
   </thead>
   <tbody>
-    <% @foods.each do |food| %>
+    <% @foods.each do |f| %>
       <tr>
-        <td><%= food.food %></td>
-        <td><%= 0 %></td>
+        <td><%= f.food.food %></td>
+        <td><%= f.quantity %></td>
         <td>
-        <% if can? :destroy, food %>
-          <%= button_to "Delete Food", food, method: :delete, class:"btn btn-danger"%>
+        <% if can? :destroy, f %>
+          <%= button_to "Delete Food", inventory_path, method: :delete, class:"btn btn-danger"%>
         <% end %>
         </td>
 </tr>
