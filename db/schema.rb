@@ -39,7 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_13_120757) do
     t.bigint "food_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user"
     t.index ["food_id"], name: "index_inventory_foods_on_food_id"
     t.index ["inventory_id"], name: "index_inventory_foods_on_inventory_id"
   end
@@ -59,7 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_13_120757) do
     t.decimal "preparationTime"
     t.decimal "cookingTime"
     t.text "description"
-    t.boolean "public"
+    t.boolean "public", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
