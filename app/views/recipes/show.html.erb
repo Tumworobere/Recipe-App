@@ -21,7 +21,7 @@
     </div>
     <div class="d-flex justify-content-around">
     <div class="w-30 foods-btn">
-      <a "Generate shopping list" class= "btn btn-primary btn-floating mx-1">Generate shopping list</a>
+      <a "Generate shopping list" class= "btn btn-primary btn-floating mx-1 click_btns">Generate shopping list</a>
     </div>
     <div class="foods-btn">
       <a class= "btn btn-primary btn-floating mx-1 click_btn">Add ingredient</a>
@@ -60,15 +60,16 @@
 </table>
 <% end %>
 <div class='modals'>
-  <%= render 'add_recipe_food' %>
+  <%= render 'add_shopping_list' %>
 </div>
 
 <script>
-  document.querySelector('.click_btn').addEventListener('click', (event) => {
+  document.querySelector('.click_btns').addEventListener('click', (event) => {
     document.querySelector('.modals').style.display = 'block'
   })
 
   document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
     document.querySelector('.modals').style.display = 'none'
   })
+
 </script>

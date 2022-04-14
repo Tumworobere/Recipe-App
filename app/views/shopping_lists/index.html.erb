@@ -1,2 +1,26 @@
-<h1>ShopingLists#index</h1>
-<p>Find me in app/views/shoping_lists/index.html.erb</p>
+<div class="foods-btn">
+  <h2><%= @inventory.name %></h2>
+  <%= link_to 'Add Food', new_inventory_inventory_food_path(:inventory_id =>  @inventory.id )%>
+</div>
+<% if @foods.empty? %>
+<p class="no-food">No food added to the inventory yet. Please use the button above ☝️ to add new food</p>
+<% else %>
+<table class="table table-hover table-striped table-bordered">
+  <thead class="bg-color">
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |f| %>
+      <tr>
+        <td><%= f.food.food %></td>
+        <td><%= f.quantity %></td>
+        <td><%= f.quantity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

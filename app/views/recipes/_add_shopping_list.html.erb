@@ -1,0 +1,25 @@
+<div class="modal-contents slide-fwd-center">
+  <div>
+    <span>x</span>
+  </div>
+  <div  class="form-heading">
+    <h2>Generating Shopping List</h2>
+    <hr style="margin: 5px auto;">
+  </div>
+
+  <h4>Choose an inventory to use</h4>
+  <div class="form-group add-btn">
+    <%= form_with url: recipe_recipe_foods_path(params[:id]), scope: :recipe_foods do |f| %>
+      <div class="field">
+        <%= f.select :inventory_id,@inventories.collect { |invent| [invent.name, invent.id] }, class: "form-select", required: true %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Generate" %>
+      </div>
+    <% end %>
+  <div>
+</div>
+
+
+
+
