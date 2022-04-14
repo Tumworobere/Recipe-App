@@ -1,15 +1,14 @@
-<div class="modal-content slide-fwd-center">
+<div class="modal-contents slide-fwd-center">
   <div>
     <span>x</span>
   </div>
   <div  class="form-heading">
     <h2>Add Recipe Food</h2>
-    <button class="click_btn">Click Me</button>
     <hr style="margin: 5px auto;">
   </div>
 
   <div class="form-group">
-    <%= form_with url: recipe_recipe_foods_path(params[:recipe_id]), scope: :recipe_foods do |f| %>
+    <%= form_with url: recipe_recipe_foods_path(params[:id]), scope: :recipe_foods do |f| %>
       <div class="field">
         <%= f.select :food_id,@foods.collect { |food| [food.food, food.id] }, class: "form-select", required: true %>
       </div>
@@ -22,4 +21,3 @@
     <% end %>
   <div>
 </div>
-

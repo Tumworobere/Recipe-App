@@ -3,5 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 document.querySelector('.click_btn').addEventListener('click', () => {
-  document.querySelector('.form-group').classList.toggle('hide')
+  console.log('hello, over here')
+  document.querySelector('.modal-content').classList.toggle('hide')
 })

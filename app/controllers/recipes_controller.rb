@@ -5,13 +5,13 @@ class RecipesController < ApplicationController
     @recipes = current_user.recipes
   end
 
-  def show; end
+  def show
+    @foods = current_user.foods
+  end
 
   def new
     @recipe = Recipe.new
   end
-
-  def edit; end
 
   def create
     @recipe = current_user.recipes.new(recipe_params)

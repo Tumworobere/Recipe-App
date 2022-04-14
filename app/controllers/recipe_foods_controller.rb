@@ -10,7 +10,7 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       if @recipe_food.save!
-        format.html { redirect_to recipe_path(@recipe), notice: 'Recipe food has been added' }
+        format.html { redirect_to recipes_path, notice: 'Recipe food has been added' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
