@@ -23,7 +23,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy!
 
     respond_to do |format|
-      format.html { redirect_to recipe_url(), notice: 'Recipe food successfully deleted.' }
+      format.html { redirect_to recipe_url, notice: 'Recipe food successfully deleted.' }
     end
   end
 
@@ -33,4 +33,3 @@ class RecipeFoodsController < ApplicationController
     params.require(:recipe_foods).permit(:food_id, :quantity)
   end
 end
- 
