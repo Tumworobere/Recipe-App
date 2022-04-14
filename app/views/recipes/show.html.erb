@@ -64,13 +64,11 @@
 </div>
 
 <script>
-const btn = document.querySelector('.click_btn');
-btn.addEventListener('click', (event) => {
-  document.querySelector('.modals').style.display = 'block'
- })
+  document.querySelector('.click_btn').addEventListener('click', (event) => {
+    document.querySelector('.modals').style.display = 'block'
+  })
 
-document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
-  document.querySelector('.modals').style.display = 'none'
-})
-
+  document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
+    document.querySelector('.modals').style.display = 'none'
+  })
 </script>

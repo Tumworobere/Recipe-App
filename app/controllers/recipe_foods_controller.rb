@@ -10,7 +10,7 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       if @recipe_food.save!
-        format.html { redirect_to recipe_path(@recipe), notice: 'Recipe food has been added' }
+        format.html { redirect_to recipe_path(@recipe), notice: 'Recipe ingredient has been added' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -23,7 +23,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy!
 
     respond_to do |format|
-      format.html { redirect_to recipe_url, notice: 'Recipe food successfully deleted.' }
+      format.html { redirect_to recipe_url, notice: 'Recipe ingredient successfully deleted.' }
     end
   end
 

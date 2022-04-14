@@ -7,7 +7,7 @@
     <hr style="margin: 5px auto;">
   </div>
 
-  <div class="form-group">
+  <div class="form-group add-btn">
     <%= form_with url: recipe_recipe_foods_path(params[:id]), scope: :recipe_foods do |f| %>
       <div class="field">
         <%= f.select :food_id,@foods.collect { |food| [food.food, food.id] }, class: "form-select", required: true %>
@@ -21,3 +21,7 @@
     <% end %>
   <div>
 </div>
+
+
+
+
