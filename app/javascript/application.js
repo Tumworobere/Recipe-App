@@ -3,6 +3,9 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 document.querySelector('.click_btn').addEventListener('click', () => {
-  console.log('hello, over here')
-  document.querySelector('.modal-content').classList.toggle('hide')
+  document.querySelector('.modals').style.display = 'block'
+ })
+
+document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
+  document.querySelector('.modals').style.display = 'none'
 })
