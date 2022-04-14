@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # Defines the routes for the Users controller
   resources :users, only: [:index]
   resources :foods, except: [:update]
+  resources :public_recipes,except: [:update]
+
   resources :recipes, except: [:update] do
     resources :recipe_foods, only: [:create, :destroy]
   end
