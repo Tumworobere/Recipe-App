@@ -1,6 +1,4 @@
-
-
-<div class="border border-2 border-primary container p-2 my-5 rounded">
+<div class="container p-2 rounded show-container">
   <div class="my-3 text-center">
     <h2 class><%= @recipe.name%></h2>
   </div>
@@ -19,16 +17,60 @@
       </div>
     </div>
     <div>
-      <h5 class="p-2"> Cooking time: <%= @recipe.preparationTime %> min </h5>
-      <h5 class="p-2"> Steps go here...</h5>
+      <h5 class="p-2"> Cooking time: <%= @recipe.cookingTime %> min </h5>
     </div>
     <div class="d-flex justify-content-around">
-    <div class="w-30">
-      <%= link_to "Generate shopping list", recipes_path, class: "btn btn-primary btn-floating mx-1"%>
+    <div class="w-30 foods-btn">
+      <a "Generate shopping list" class= "btn btn-primary btn-floating mx-1">Generate shopping list</a>
     </div>
-    <div>
-      <%= link_to "Add ingredient", recipes_path, class: "btn btn-primary btn-floating mx-1"%>
+    <div class="foods-btn">
+      <a class= "btn btn-primary btn-floating mx-1 click_btn">Add ingredient</a>
     </div>
     </div>
   </div>
 </div>
+<hr class="divider">
+<% if @recipe.recipe_foods.empty? %>
+  <p class="no-food">No ingredients added yet. Please use the button above ☝️ to add a new ingredient</p>
+<% else %>
+<table class="table table-hover table-striped table-bordered">
+  <thead class="bg-color">
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Value</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe.recipe_foods.each do |recipe| %>
+      <tr>
+        <td><%= recipe.food.food %></td>
+        <td><%= recipe.quantity %><%= recipe.food.measurement_unit %></td>
+        <td>$<%= recipe.quantity * recipe.food.unit_price %></td>
+        <td>
+          <% if can? :destroy, recipe %>
+            <%= link_to 'Remove', recipe_recipe_food_path(@recipe.id, recipe.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+            class: "btn btn-outline-danger", type:"button" %>
+          <% end %>
+        </td>
+      </tr> 
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<div class='modals'>
+  <%= render 'add_recipe_food' %>
+</div>
+
+<script>
+const btn = document.querySelector('.click_btn');
+btn.addEventListener('click', (event) => {
+  document.querySelector('.modals').style.display = 'block'
+ })
+
+document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
+  document.querySelector('.modals').style.display = 'none'
+})
+
+</script>

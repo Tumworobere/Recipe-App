@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   devise_scope :user do
     authenticated :user do
-      root :to => "users#index", as: :authenticated_root
+      root :to => "foods#index", as: :authenticated_root
       get '/users/sign_out' => 'devise/sessions#destroy'
     end
     unauthenticated :user do
@@ -15,8 +15,11 @@ Rails.application.routes.draw do
   # Defines the routes for the Users controller
   resources :users, only: [:index]
   resources :foods, except: [:update]
-  resources :recipes,except: [:update]
   resources :public_recipes,except: [:update]
+
+  resources :recipes, except: [:update] do
+    resources :recipe_foods, only: [:create, :destroy]
+  end
 
   # Defines the routes for the inventory and inventory_foods controller
   resources :inventories, except: %i[update] do

@@ -1,0 +1,23 @@
+<div class="modal-contents slide-fwd-center">
+  <div>
+    <span>x</span>
+  </div>
+  <div  class="form-heading">
+    <h2>Add Recipe Food</h2>
+    <hr style="margin: 5px auto;">
+  </div>
+
+  <div class="form-group">
+    <%= form_with url: recipe_recipe_foods_path(params[:id]), scope: :recipe_foods do |f| %>
+      <div class="field">
+        <%= f.select :food_id,@foods.collect { |food| [food.food, food.id] }, class: "form-select", required: true %>
+      </div>
+      <div class="field">
+        <%= f.number_field :quantity, placeholder: "Quantity (e.g 10, 20 etc)", required: true %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Add Quantity" %>
+      </div>
+    <% end %>
+  <div>
+</div>
