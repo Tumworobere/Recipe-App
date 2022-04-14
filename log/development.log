@@ -4734,3 +4734,17 @@ puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.4) lib/puma/server.rb:441:in `process_client'
 puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-04-14 08:25:56 +0300
+  
+SyntaxError (C:/Users/User/Desktop/PROJECTS/Rails/week4/Recipe-App/config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'):
+  
+config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
+config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
+config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 127.0.0.1 at 2022-04-14 10:00:43 +0300
+  
+SyntaxError (C:/Users/User/Desktop/PROJECTS/Rails/week4/Recipe-App/config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'):
+  
+config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
+config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
+config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
