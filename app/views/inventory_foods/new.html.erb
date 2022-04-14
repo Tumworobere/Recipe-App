@@ -1,0 +1,21 @@
+<div  class="form-heading">
+  <h2>Add New Food (Inventory <%= @current_inventory.id %> ) </h2>
+  <hr style="margin: 5px auto;">
+</div>
+
+<div class="form-goup">
+  <%= form_with url: inventory_inventory_foods_path(@current_inventory.id), scope: :inventory_foods do |f| %>
+    <div class="field">
+      <%= f.number_field  :quantity, placeholder: "Input quantity", autofocus: true %>
+    </div>
+
+    <div class="field">
+  <%= f.label "Foods List" %>
+  <%= f.collection_select(:food_id, @foods , :id, :food, { :prompt => 'Add food to inventory', 
+  :selected => @inventory_food.food_id }, { class: 'form-control w-50' }) %>
+</div>
+    <div class="actions">
+      <%= f.submit "Add inventory food" %>
+    </div>
+  <% end %>
+<div>
