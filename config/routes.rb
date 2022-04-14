@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'shopping_lists/index'
   devise_for :users
 
   # Defines the root path route ("/")
@@ -26,4 +27,3 @@ Rails.application.routes.draw do
     resources :inventory_foods, only: %i[new create destroy]
   end 
 end
-
