@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   devise_scope :user do
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
 
   # Defines the routes for the inventory and inventory_foods controller
   resources :inventories, except: %i[update] do
-    resources :inventory_foods, only: %i[update]
-  end
+    resources :inventory_foods, only: %i[new create destroy]
+  end 
 end
 
