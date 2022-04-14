@@ -44,6 +44,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_13_132322) do
     t.index ["inventory_id"], name: "index_inventory_foods_on_inventory_id"
   end
 
+  create_table "recipe_foods", force: :cascade do |t|
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "recipe_id", null: false
+    t.index ["recipe_id"], name: "index_recipe_foods_on_recipe_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.decimal "preparationTime"
@@ -73,5 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_13_132322) do
   add_foreign_key "inventories", "users"
   add_foreign_key "inventory_foods", "foods"
   add_foreign_key "inventory_foods", "inventories"
+  add_foreign_key "recipe_foods", "recipes"
   add_foreign_key "recipes", "users"
 end
