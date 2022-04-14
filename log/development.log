@@ -4748,3 +4748,10 @@ SyntaxError (C:/Users/User/Desktop/PROJECTS/Rails/week4/Recipe-App/config/routes
 config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
 config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
 config/routes.rb:26: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 127.0.0.1 at 2022-04-14 10:20:04 +0300
+  
+SyntaxError (C:/Users/User/Desktop/PROJECTS/Rails/week4/Recipe-App/config/routes.rb:30: syntax error, unexpected end-of-input, expecting `end'):
+  
+config/routes.rb:30: syntax error, unexpected end-of-input, expecting `end'
+config/routes.rb:30: syntax error, unexpected end-of-input, expecting `end'
+config/routes.rb:30: syntax error, unexpected end-of-input, expecting `end'
