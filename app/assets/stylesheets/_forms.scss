@@ -46,6 +46,7 @@
       }
 
       input[type="text"]:focus,
+      input[type="number"]:focus,
       textarea:focus {
         border: solid 2px $primary-color-1;
         outline: none;
@@ -67,6 +68,7 @@
 .form-heading {
   text-align: center;
   font-family: $font-1;
+  margin-top: 50px;
 
   h2 {
     margin: 0;

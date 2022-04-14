@@ -2,7 +2,9 @@
   <h2>Food List</h2>
   <%= link_to 'Add Food', new_food_path %>
 </div>
-
+<% if @foods.empty? %>
+  <p class="no-food">No foods added yet. Please use the button above ☝️ to add a new food</p>
+<% else %>
 <table class="table table-hover table-striped table-bordered">
   <thead class="bg-color">
     <tr>
@@ -13,8 +15,10 @@
     </tr>
   </thead>
   <tbody>
-    <% @foods.each do |food| %>
-      <%= render 'shared/table', food: food %>
-    <% end %>
+    
+      <% @foods.each do |food| %>
+        <%= render 'shared/table', food: food %>
+      <% end %>
   </tbody>
 </table>
+<% end %>
