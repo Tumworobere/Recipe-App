@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_04_13_120757) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_04_13_132322) do
+>>>>>>> c55e898a6b6082ca3949a12be957c1b973447c45
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_13_120757) do
     t.bigint "food_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user"
     t.index ["food_id"], name: "index_inventory_foods_on_food_id"
     t.index ["inventory_id"], name: "index_inventory_foods_on_inventory_id"
   end
@@ -58,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_13_120757) do
     t.decimal "preparationTime"
     t.decimal "cookingTime"
     t.text "description"
-    t.boolean "public", default: true
+    t.boolean "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
