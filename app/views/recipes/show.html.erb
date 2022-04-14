@@ -46,11 +46,12 @@
     <% @recipe.recipe_foods.each do |recipe| %>
       <tr>
         <td><%= recipe.food.food %></td>
-        <td><%= recipe.quantity %></td>
-        <td><%= recipe.quantity * recipe.food.unit_price %></td>
+        <td><%= recipe.quantity %><%= recipe.food.measurement_unit %></td>
+        <td>$<%= recipe.quantity * recipe.food.unit_price %></td>
         <td>
           <% if can? :destroy, recipe %>
-      
+            <%= link_to 'Remove', recipe_recipe_food_path(@recipe.id, recipe.id), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+            class: "btn btn-outline-danger", type:"button" %>
           <% end %>
         </td>
       </tr> 
@@ -61,3 +62,15 @@
 <div class='modals'>
   <%= render 'add_recipe_food' %>
 </div>
+
+<script>
+const btn = document.querySelector('.click_btn');
+btn.addEventListener('click', (event) => {
+  document.querySelector('.modals').style.display = 'block'
+ })
+
+document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
+  document.querySelector('.modals').style.display = 'none'
+})
+
+</script>

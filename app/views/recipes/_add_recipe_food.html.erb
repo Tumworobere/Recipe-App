@@ -21,17 +21,3 @@
     <% end %>
   <div>
 </div>
-
-<script>
-const btn = document.querySelector('.click_btn');
-btn.addEventListener('click', (event) => {
-  event.preventDefault();
-  console.log('But i am showing')
-  document.querySelector('.modals').style.display = 'block'
- })
-
-document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
-  document.querySelector('.modals').style.display = 'none'
-})
-
-</script>
