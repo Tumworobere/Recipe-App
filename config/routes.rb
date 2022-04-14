@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   resources :foods, except: [:update]
   resources :recipes,except: [:update]
+  resources :public_recipes,except: [:update]
 
   # Defines the routes for the inventory and inventory_foods controller
   resources :inventories, except: %i[update] do
