@@ -4,7 +4,6 @@ class Inventory < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :description, length: { maximum: 250 }
 
   def compute_missing_foods(recipe)
     shopping_list = []

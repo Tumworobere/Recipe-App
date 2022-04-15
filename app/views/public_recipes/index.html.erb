@@ -1,9 +1,9 @@
 <section class="container w-50 mx-auto mt-5">
  <h2 class="fs-1 lh-lg fw-semibold mt-5">Public Recipes</h2>
   <div>
-    <ul class="m-0 p-0">
+    <ul class="m-0 p-0  card-outline-warning">
       <% @recipes.each do |recipe| %>
-      <li class="card list-style-none mb-3">
+      <li class="card list-style-none mb-3 card-outline-warning">
         <div class="card-header fs-4">
         <%= link_to recipe.name, recipe_path(recipe.id) %>
         </div>
