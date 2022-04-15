@@ -8208,3 +8208,30 @@ Processing by FoodsController#index as HTML
 Completed 200 OK in 26ms (Views: 18.6ms | ActiveRecord: 1.4ms | Allocations: 5324)
 
 
+Started GET "/recipes" for 127.0.0.1 at 2022-04-15 12:53:06 +0100
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Exists? (4.7ms)[0m  [1m[34mSELECT 1 AS one FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.erb:5
+  Rendered recipes/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 3253)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 174)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 6144)
+Completed 200 OK in 109ms (Views: 26.2ms | ActiveRecord: 29.1ms | Allocations: 14175)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2022-04-15 12:56:16 +0100
+Processing by InventoriesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering inventories/index.html.erb within layouts/application
+  [1m[36mInventory Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "inventories" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/inventories/index.html.erb:5
+  Rendered inventories/index.html.erb within layouts/application (Duration: 25.9ms | Allocations: 1818)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 168)
+  Rendered layout layouts/application.html.erb (Duration: 63.7ms | Allocations: 4672)
+Completed 200 OK in 118ms (Views: 65.3ms | ActiveRecord: 7.7ms | Allocations: 8065)
+
+
