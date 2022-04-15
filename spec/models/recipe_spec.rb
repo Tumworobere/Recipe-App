@@ -12,5 +12,4 @@ RSpec.describe Recipe, type: :model do
     it { should validate_presence_of(:cookingTime) }
     it { should validate_presence_of(:description) }
   end
-
 end
