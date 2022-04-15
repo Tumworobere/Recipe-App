@@ -40,12 +40,12 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if @recipe.public
       @recipe.update(public: false)
-      flash[:notice] = 'You have updated the recipe status to private'
+      flash.now[:notice] = 'You have updated the recipe status to private'
     else
       @recipe.update(public: true)
-      flash[:notice] = 'You have updated the recipe status to public'
+      flash.now[:notice] = 'You have updated the recipe status to public'
     end
-    redirect_to recipe_path
+    # redirect_to recipe_path
   end
 
   private
