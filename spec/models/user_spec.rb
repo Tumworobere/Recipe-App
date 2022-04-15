@@ -10,5 +10,6 @@ RSpec.describe User, type: :model do
 
   context 'values not empty' do
     it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:email) }
   end
 end
