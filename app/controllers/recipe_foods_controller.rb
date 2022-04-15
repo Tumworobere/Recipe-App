@@ -1,9 +1,4 @@
 class RecipeFoodsController < ApplicationController
-  def new
-    @recipe_food = RecipeFood.new
-    @foods = current_user.foods
-  end
-
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.new(recipe_food_params)
