@@ -1,5 +1,6 @@
 class InventoryFoodsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :inventory
+  load_and_authorize_resource :inventory_food, through: :inventory
 
   def index
     @inventory_foods = InventoryFood.all

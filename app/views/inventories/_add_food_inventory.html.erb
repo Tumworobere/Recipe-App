@@ -3,22 +3,23 @@
     <span>x</span>
   </div>
   <div  class="form-heading">
-    <h2>Add Recipe Food</h2>
+    <h2>Add Inventory Food</h2>
     <hr style="margin: 5px auto;">
   </div>
 
   <div class="form-group add-btn">
-    <%= form_with url: recipe_recipe_foods_path(params[:id]), scope: :recipe_foods do |f| %>
+    <%= form_with url: inventory_inventory_foods_path(@inventory.id), scope: :inventory_foods do |f| %>
       <div class="field">
-        <%= f.select :food_id,@foods.collect { |food| [food.food, food.id] }, class: "form-select", required: true %>
+        <%= f.select :food_id,@foody.collect { |food| [food.food, food.id] }, { :prompt => 'Add food to inventory'},
+         class: "form-select mb-3", required: true %>
       </div>
+      
       <div class="field">
         <%= f.number_field :quantity, placeholder: "Quantity (e.g 10, 20 etc)", required: true %>
       </div>
       <div class="actions">
-        <%= f.submit "Add Quantity" %>
+      <%= f.submit "Add inventory food" %>
       </div>
     <% end %>
   </div>
 </div>
-

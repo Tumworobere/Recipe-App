@@ -81,9 +81,9 @@ rails db:test:prepare
 
 👤 **Mongare S.**
 
-[@githubhandle](https://github.com/Mosams/)
-[@twitterhandle](https://twitter.com/sam_mongare)
-[LinkedIn](https://www.linkedin.com/in/sammy-mongare-b8288310b/)
+- [@githubhandle](https://github.com/Mosams/)
+- [@twitterhandle](https://twitter.com/sam_mongare)
+- [LinkedIn](https://www.linkedin.com/in/sammy-mongare-b8288310b/)
 
 👤 **Anselem Odimegwu**
 

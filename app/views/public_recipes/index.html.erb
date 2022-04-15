@@ -1,20 +1,28 @@
 <section class="container w-50 mx-auto mt-5">
  <h2 class="fs-1 lh-lg fw-semibold mt-5">Public Recipes</h2>
   <div>
-    <ul class="m-0 p-0">
+    <ul class="m-0 p-0  card-outline-warning">
       <% @recipes.each do |recipe| %>
-      <li class="card list-style-none mb-3">
-        <div class="card-header fs-4">
-        <%= link_to recipe.name, recipe_path(recipe.id) %>
+        <li class="card list-style-none mb-7 w-100 card-outline-warning"
+        style= "margin-bottom: 4rem; box-outline: #DD7230;
+        box-shadow: 0 5px rgba(93, 64, 55, 0.4), 0 10px rgba(93, 64, 55, 0.3),
+                0 15px rgba(93, 64, 55, 0.2), 0 20px rgba(93, 64, 55, 0.1),
+                0 25px rgba(93, 64, 55, 0.05),
+                -5px 5px 40px rgba(100, 0, 0, 0.4);">
+         <%= link_to recipe_path(recipe.id), style:"text-decoration: none; color: black" do %>
+        <div class="card-header fs-4" style= "background-color: #E7E393; ">
+        <h4 class="card-title text-muted"><%= recipe.name %>
+        <span class="card-title">made by chef <%= recipe.user.name %>👨🏻‍🍳</span></h4>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">By: <%= recipe.user.name %></h5>
-          <p class="card-text fs-6 mb-4">Description: <%= recipe.description %></p>
-          <div class="d-flex justify-content-between">
-            <span class="card-text">Total food items: <%= recipe.cookingTime %> </span><br>
-            <span class="card-text">Total price: <%= recipe.preparationTime %> $</span>
+        <div class="card-body" style= "background-color: whitesmoke ">
+          <p class="card-text fs-6 mb-4"><%= recipe.description %></p>
+        </div>
+          <div class="card-footer d-flex justify-content-between">
+            <span class="card-text">Total food items: <%= recipe.recipe_foods.length %> </span><br>
+            <span class="card-text">Total price: $<%= Recipe.compute_total_amount(recipe) %></span>
           </div>
         </div>
+        <% end %>
       </li>
       <% end %>
         </ul>

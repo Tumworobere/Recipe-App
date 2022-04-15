@@ -1,0 +1,27 @@
+<div class="modal-contents slide-fwd-center shopping">
+  <div>
+    <span>x</span>
+  </div>
+  <div  class="form-heading">
+    <h2>Generating Shopping List</h2>
+    <hr style="margin: 5px auto;">
+  </div>
+
+  <h4>Choose an inventory to use</h4>
+
+  <div class="form-group add-btn">
+   
+    <%= form_with url: shopping_lists_path, method: :get  do |f| %>
+      <div class="field">
+       <%= f.select :inventory_id, @inventories.collect { |inventory| [inventory.name, inventory.id] }, :prompt => 'Select an Inventory',
+        class: 'form-select', required: true %>
+      </div>
+      <div class="field">
+      <%= f.hidden_field :recipe_id, value: @recipes.id, required: true, class: 'border py-2 px-4 w-80' %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Generate" %>
+      </div>
+    <% end %>
+  <div>
+</div>

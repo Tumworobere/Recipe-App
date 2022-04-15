@@ -6,13 +6,12 @@
     <div class="split">
       <div class="d-flex justify-content-between p-2">
         <h5> Preparation time: <%= @recipe.preparationTime %> min </h5>
-        <div class="public-btn">
-        <% if @recipe.public %>
-          Public: <input type="checkbox" checked="true" class="mx-4" >
+        <div class="public-btn form-check form-switch d-flex flex-row">
+          <p> Public: <span> <%= form_with url:recipe_path(@recipe.id), :method => :patch do |f| %>
+          <%= f.check_box :public, class:"mx-4 form-check-input", checked:true, onchange: "this.form.submit();", style: "background-color: #DD7230;"  %>
+           </td>
         <% end %>
-        <% if !@recipe.public %>
-          Public: <input type="checkbox" class="mx-4" >
-        <% end %>
+        </span></p>
       </div>
       </div>
     </div>
@@ -21,7 +20,7 @@
     </div>
     <div class="d-flex justify-content-around">
     <div class="w-30 foods-btn">
-      <a "Generate shopping list" class= "btn btn-primary btn-floating mx-1">Generate shopping list</a>
+      <a "Generate shopping list" class= "btn btn-primary btn-floating mx-1 click_btns">Generate shopping list</a>
     </div>
     <div class="foods-btn">
       <a class= "btn btn-primary btn-floating mx-1 click_btn">Add ingredient</a>
@@ -59,16 +58,30 @@
   </tbody>
 </table>
 <% end %>
-<div class='modals'>
-  <%= render 'add_recipe_food' %>
+
+<div class='recipe-modal modals'>
+<%= render 'add_recipe_food' %>
 </div>
+<div class='shopping-modal modals'>
+  <%= render 'add_shopping_list' %>
+</div>
+
 
 <script>
   document.querySelector('.click_btn').addEventListener('click', (event) => {
-    document.querySelector('.modals').style.display = 'block'
+    console.log('click recipe');
+    document.querySelector('.recipe-modal').style.display = 'block'
   })
 
-    document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
-      document.querySelector('.modals').style.display = 'none'
-    })
+  document.querySelector('.click_btns').addEventListener('click', (event) => {
+    console.log('click shopping');
+    document.querySelector('.shopping-modal').style.display = 'block'
+  })
+
+  document.querySelectorAll('.modal-contents > div:first-of-type > span').forEach(element => {
+    element.addEventListener('click', () => {
+    document.querySelector('.recipe-modal').style.display = 'none'
+    document.querySelector('.shopping-modal').style.display = 'none'
+  })
+})
 </script>
