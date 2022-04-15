@@ -23,8 +23,18 @@ RSpec.describe 'Users page', type: :feature do
     expect(page).to have_content('No inventories added yet. Please use the button above ☝️ to add new inventory')
   end
 
-  it 'should have the following content' do
+  it 'should link up to page to add new inventory' do
     click_link 'Add Inventory'
     expect(current_path).to eq(new_inventory_path)
+  end
+
+  it 'should link up to the recipies list page' do
+    click_link 'Recipies'
+    expect(current_path).to eq(recipes_path)
+  end
+
+  it 'should link up the foods list page' do
+    click_link 'Foods'
+    expect(current_path).to eq(foods_path)
   end
 end

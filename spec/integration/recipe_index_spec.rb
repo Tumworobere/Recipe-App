@@ -11,7 +11,7 @@ RSpec.describe 'Users page', type: :feature do
     fill_in 'Password', with: '123abc'
     click_button 'Log in'
 
-    visit '/recipes'
+    visit recipes_path
   end
 
   it 'should have the following content' do
@@ -23,8 +23,18 @@ RSpec.describe 'Users page', type: :feature do
     expect(page).to have_content('No recipies added yet. Please use the button above ☝️ to add a new recipe')
   end
 
-  it 'should have the following content' do
+  it 'should link up to page to add new recipe' do
     click_link 'Add Recipe'
     expect(current_path).to eq(new_recipe_path)
+  end
+
+  it 'should link up to the inventories list page' do
+    click_link 'Inventories'
+    expect(current_path).to eq(inventories_path)
+  end
+
+  it 'should link up to the foods list page' do
+    click_link 'Foods'
+    expect(current_path).to eq(foods_path)
   end
 end
