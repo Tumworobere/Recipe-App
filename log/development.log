@@ -8550,3 +8550,21 @@ Processing by InventoriesController#new as HTML
 Completed 200 OK in 40ms (Views: 21.6ms | ActiveRecord: 0.6ms | Allocations: 5151)
 
 
+Started GET "/users/sign_out" for 127.0.0.1 at 2022-04-15 13:46:31 +0100
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 38ms (ActiveRecord: 0.0ms | Allocations: 5543)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-15 13:46:31 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 129)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 596)
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 130)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 3285)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 3863)
+
+

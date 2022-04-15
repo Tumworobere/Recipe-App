@@ -12,11 +12,12 @@ RSpec.describe 'Recipe show page', type: :feature do
       fill_in 'Password', with: '123abc'
       click_button 'Log in'
 
-      @recipe = @user1.recipes.create!(name: 'recipe test', cookingTime: '10mins', preparationTime: '10mins', description: "test recipe")
+      @recipe = @user1.recipes.create!(name: 'recipe test', cookingTime: '10mins', preparationTime: '10mins',
+                                       description: 'test recipe')
       visit recipes_path
     end
 
-    it "should have the following content" do
+    it 'should have the following content' do
       expect(page).to have_content('recipe test')
       expect(page).to have_content('test recipe')
       expect(page).to have_link('Remove')
@@ -39,16 +40,17 @@ RSpec.describe 'Recipe show page', type: :feature do
       fill_in 'Password', with: '123abc'
       click_button 'Log in'
 
-      @recipe = @user1.recipes.create!(name: 'recipe test', cookingTime: '10mins', preparationTime: '10mins', description: "test recipe")
+      @recipe = @user1.recipes.create!(name: 'recipe test', cookingTime: '10mins', preparationTime: '10mins',
+                                       description: 'test recipe')
       visit recipe_path(@recipe)
     end
 
-    it "should have the following content" do
+    it 'should have the following content' do
       expect(page).to have_content('recipe test')
       expect(page).to have_content('Preparation time: 10.0 min')
       expect(page).to have_content('Cooking time: 10.0 min')
       expect(page).to have_content('Public')
       expect(page).to have_content('No ingredients added yet. Please use the button above ☝️ to add a new ingredient')
     end
-  end 
+  end
 end

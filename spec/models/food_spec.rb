@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-
   context 'associations' do
     it { should belong_to(:user).class_name('User') }
   end
@@ -14,8 +13,8 @@ RSpec.describe Food, type: :model do
 
   context 'values should be numerical' do
     it do
-      should validate_numericality_of(:unit_price).
-        is_greater_than_or_equal_to(0)
+      should validate_numericality_of(:unit_price)
+        .is_greater_than_or_equal_to(0)
     end
   end
 end

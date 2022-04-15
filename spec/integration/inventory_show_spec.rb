@@ -12,11 +12,11 @@ RSpec.describe 'Recipe show page', type: :feature do
       fill_in 'Password', with: '123abc'
       click_button 'Log in'
 
-      @inventory = @user1.inventories.create!(name: 'inventory test', description: "test inventory")
+      @inventory = @user1.inventories.create!(name: 'inventory test', description: 'test inventory')
       visit inventories_path
     end
 
-    it "should have the following content" do
+    it 'should have the following content' do
       expect(page).to have_content('inventory test')
       expect(page).to have_content('test inventory')
       expect(page).to have_link('Remove')
@@ -27,5 +27,4 @@ RSpec.describe 'Recipe show page', type: :feature do
       expect(current_path).to eq(inventory_path(@inventory))
     end
   end
-
 end
