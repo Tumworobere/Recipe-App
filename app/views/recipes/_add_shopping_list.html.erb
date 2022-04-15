@@ -14,9 +14,11 @@
     <%= form_with url: shopping_lists_path, method: :get  do |f| %>
       <div class="field">
        <%= f.select :inventory_id, @inventories.collect { |inventory| [inventory.name, inventory.id] }, :prompt => 'Select an Inventory',
-        class: 'focus:outline-none', required: true %>
+        class: 'form-select', required: true %>
       </div>
+      <div class="field">
       <%= f.hidden_field :recipe_id, value: @recipes.id, required: true, class: 'border py-2 px-4 w-80' %>
+      </div>
       <div class="actions">
         <%= f.submit "Generate" %>
       </div>
