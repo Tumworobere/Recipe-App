@@ -58,17 +58,30 @@
   </tbody>
 </table>
 <% end %>
-<div class='modals'>
+
+<div class='recipe-modal modals'>
+<%= render 'add_recipe_food' %>
+</div>
+<div class='shopping-modal modals'>
   <%= render 'add_shopping_list' %>
 </div>
 
+
 <script>
+  document.querySelector('.click_btn').addEventListener('click', (event) => {
+    console.log('click recipe');
+    document.querySelector('.recipe-modal').style.display = 'block'
+  })
+
   document.querySelector('.click_btns').addEventListener('click', (event) => {
-    document.querySelector('.modals').style.display = 'block'
+    console.log('click shopping');
+    document.querySelector('.shopping-modal').style.display = 'block'
   })
 
-  document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
-    document.querySelector('.modals').style.display = 'none'
+  document.querySelectorAll('.modal-contents > div:first-of-type > span').forEach(element => {
+    element.addEventListener('click', () => {
+    document.querySelector('.recipe-modal').style.display = 'none'
+    document.querySelector('.shopping-modal').style.display = 'none'
   })
-
+})
 </script>
