@@ -57,7 +57,6 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -72,6 +71,7 @@ group :test do
   gem 'capybara'
   gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
   gem 'ffi', '~> 1.15', '>= 1.15.5'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'webdrivers'
