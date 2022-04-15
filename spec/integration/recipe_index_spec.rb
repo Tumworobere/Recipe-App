@@ -20,7 +20,7 @@ RSpec.describe 'Recipe index page', type: :feature do
     expect(page).to have_link('Foods')
     expect(page).to have_link('Recipies')
     expect(page).to have_link('Inventories')
-    expect(page).to have_content('No recipies added yet. Please use the button above ☝️ to add a new recipe')
+    expect(page).to have_content('Recipe List')
   end
 
   it 'should link up to page to add new recipe' do

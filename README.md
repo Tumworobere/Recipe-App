@@ -6,7 +6,8 @@ from a recipe. Also, since sharing recipes is an important part of cooking the a
 
 ## Project screenshots
 
-![screenshot(coming soon)](./app_screenshot.png)
+![screenshot](./app_screenshot.png)
+![screenshot](./app_screenshot2.png)
 
 Additional description about the project and its features.
 

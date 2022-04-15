@@ -12,6 +12,6 @@ RSpec.describe Inventory, type: :model do
   end
 
   context 'length' do
-    it { should validate_length_of(:description).is_at_most(250) }
+    it { should validate_length_of(:description).is_at_most(1000) }
   end
 end
