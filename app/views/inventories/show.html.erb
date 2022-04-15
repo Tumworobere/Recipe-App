@@ -1,6 +1,8 @@
 <div class="foods-btn">
   <h2><%= @inventory.name %></h2>
+  <% if can? :destroy, @inventory %>
   <a "Add Food" class= "btn btn-primary btn-floating click_add_food_btn" style= "width: 10vw">Add Food</a>
+  <% end %>
 </div>
   <div class="w-30 foods-btn">
 <% if @foods.empty? %>
@@ -24,7 +26,7 @@
         <% if can? :destroy, f %>
         <%= link_to 'Remove', inventory_inventory_food_path(:inventory_id => @inventory.id, :id => f.id), 
         data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
-        class: "btn btn-outline-danger w-25", type:"button" %>
+        class: "btn btn-outline-danger w-25", style: "margin-top: 0", type:"button" %>
         <% end %>
         </td>
       </tr>
