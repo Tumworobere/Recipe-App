@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users page', type: :feature do
+RSpec.describe 'Recipe show page', type: :feature do
   describe 'recipe' do
     before :each do
       @user1 = User.create!(email: 'johndo@gmail.com', password: '123abc', name: 'John')
