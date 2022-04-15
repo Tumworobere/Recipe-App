@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
     @foods = current_user.foods
     @inventories = Inventory.all
     @recipe = current_user.recipes.includes(:recipe_foods).find(params[:id])
+    @recipes = Recipe.find(params[:id])
   end
 
   def new
@@ -33,6 +34,18 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipe was successfully deleted.' }
     end
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.public
+      @recipe.update(public: false)
+      flash[:notice] = 'You have updated the recipe status to private'
+    else
+      @recipe.update(public: true)
+      flash[:notice] = 'You have updated the recipe status to public'
+    end
+    redirect_to recipe_path
   end
 
   private

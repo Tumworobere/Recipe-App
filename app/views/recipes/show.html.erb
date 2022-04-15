@@ -6,12 +6,12 @@
     <div class="split">
       <div class="d-flex justify-content-between p-2">
         <h5> Preparation time: <%= @recipe.preparationTime %> min </h5>
-        <div class="public-btn">
-        <% if @recipe.public %>
-          Public: <input type="checkbox" checked="true" class="mx-4" >
-        <% end %>
-        <% if !@recipe.public %>
-          Public: <input type="checkbox" class="mx-4" >
+        <div class="public-btn form-check form-switch">
+        <%= form_with url:recipe_path(@recipe.id), :method => :patch do |f| %>
+          Public: <span>
+          <%= f.check_box :public, class:"mx-4 form-check-input", onchange: "this.form.submit();", style: "color: blue"  %>
+          </span>
+           </td>
         <% end %>
       </div>
       </div>
