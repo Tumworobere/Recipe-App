@@ -1,0 +1,19 @@
+<div class="form-group">
+  <%= form_with model: @recipe, method: :post, local: true do |f| %>
+    <div class="field">
+      <%= f.text_field :name, required: true, placeholder: "Recipe name" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :cooking_time, placeholder: "Coooking time", required: true%>
+    </div>
+    <div class="field">
+      <%= f.text_field :preparation_time, placeholder: "Preparation time", required: true%>
+    </div>
+    <div class="field">
+      <%= f.text_area :description, required: true, placeholder: "Recipe Description"%>
+    </div>
+    <div class="actions">
+      <%= f.submit "Add Recipe" %>
+    </div>
+  <% end %>
+</div> 

@@ -1,0 +1,51 @@
+<div class="foods-btn">
+  <h2><%= @inventory.name %></h2>
+  <% if can? :destroy, @inventory %>
+  <a "Add Food" class= "btn btn-primary btn-floating click_add_food_btn" style= "width: 10vw">Add Food</a>
+  <% end %>
+</div>
+  <div class="w-30 foods-btn">
+<% if @foods.empty? %>
+<p class="no-food">No food added to the inventory yet. Please use the button above ☝️ to add new food. 
+<span > Meanwhile here is the inventory&#39;s description🙂🙂:<br> <%= @inventory.description %></span></p>
+<% else %>
+<table class="table table-hover table-striped table-bordered">
+  <thead class="bg-color">
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |f| %>
+      <tr>
+        <td><%= f.food.food %></td>
+        <td><%= f.quantity %></td>
+        <td>
+        <% if can? :destroy, f %>
+          <%= link_to 'Remove', inventory_inventory_food_path(:inventory_id => @inventory.id, :id => f.id), 
+          data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+          class: "btn btn-outline-danger w-25", style: "margin-top: 0", type:"button" %>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<div class='modals'>
+  <%= render 'add_food_inventory' %>
+</div>
+
+<script>
+  document.querySelector('.click_add_food_btn').addEventListener('click', (event) => {
+    console.log('click add food');
+    document.querySelector('.modals').style.display = 'block'
+  })
+
+  document.querySelector('.modal-contents > div:first-of-type > span').addEventListener('click', () => {
+    document.querySelector('.modals').style.display = 'none'
+  })
+</script>

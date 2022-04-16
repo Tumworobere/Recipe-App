@@ -1,0 +1,11 @@
+<tr>
+  <td><%= food.food %></td>
+  <td><%= food.measurement_unit %></td>
+  <td>$<%= food.unit_price %></td>
+  <td>
+  <% if can? :destroy, food %>
+    <%= link_to 'Delete Food', food, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+              class: "btn btn-danger", type:"button" %>
+  <% end %>
+  </td>
+</tr>

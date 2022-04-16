@@ -1,0 +1,37 @@
+<section class="container w-100 mx-auto mt-5">
+<div class="foods-btn">
+  <h2>Recipe List</h2>
+  <%= link_to 'Add Recipe', new_recipe_path %>
+</div>
+<% if @recipes.empty? %>
+  <p class="no-food">No recipies added yet. Please use the button above ☝️ to add a new recipe</p>
+<% else %>
+<div> 
+  <ul class= "list-unstyled align-items-center d-flex flex-column align-items-center w-75">
+    <% @recipes.each do |rec| %>
+      <%= link_to recipe_path(rec.id), style:"text-decoration: none; color: black" do %>
+        <li class="card list-style-none mb-7 w-100 card-outline-warning"
+      style= "margin-bottom: 4rem; box-outline: #DD7230;
+      box-shadow: 0 5px rgba(93, 64, 55, 0.4), 0 10px rgba(93, 64, 55, 0.3),
+              0 15px rgba(93, 64, 55, 0.2), 0 20px rgba(93, 64, 55, 0.1),
+              0 25px rgba(93, 64, 55, 0.05),
+              -5px 5px 40px rgba(100, 0, 0, 0.4);">
+           <div class="card-header fs-4" style= "background-color: #E7E393; ">
+              <h4 class="card-title text-muted"><%= rec.name %></h4>
+           </div>
+           <div class="card-body"  style= "background-color: whitesmoke ">
+           <p class="card-text"><%= rec.description %></p>
+            </div>
+            <div class="card-footer d-flex flex-row-reverse">
+                <% if can? :destroy, rec %>
+                <%= link_to 'Remove', rec, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+                class: "btn btn-outline-danger", type:"button" %>
+              <% end %>
+              </div>
+      </li>
+    <% end %>
+    <% end %> 
+  </ul>
+</div>
+<% end %>
+</section>

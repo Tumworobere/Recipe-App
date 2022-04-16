@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+$primary-color-1: #854d27;
+$primary-color-2: #f4c95d;
+
+$accent-color-1: #dd7230;
+$accent-color-2: #e7e393;
+
+$neutral-color-1: #fafaf5;
+$neutral-color-2: #e4e4e0;
+$neutral-color-3: #04030f;
+
+/* Font size stack */
+$font-size: (
+  "micro": 14px,
+  "mini": 18px,
+  "smallest": 20px,
+  "smaller":  22px,
+  "small": 24px,
+  "medium": 26px,
+  "large": 40px,
+  "larger": 48px,
+  "largest": 56px,
+);
+
+/* Font Weights Stack */
+$font-weights: (
+  "normal": 400,
+  "medium": 500,
+  "extra-medium": 600,
+  "bold": 700,
+  "bolder": 800,
+);
+
+$shadow-1: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+$shadow-2: rgba(50, 50, 93, 0.25) 0 6px 12px -2px, rgba(0, 0, 0, 0.3) 0 3px 7px -3px;
+$shadow-3: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
+
+$font-1: 'Source Sans Pro', sans-serif;
