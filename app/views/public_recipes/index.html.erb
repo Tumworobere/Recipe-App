@@ -1,6 +1,9 @@
 <section class="container w-50 mx-auto mt-5">
  <h2 class="fs-1 lh-lg fw-semibold mt-5">Public Recipes</h2>
   <div>
+  <% if @recipes.empty? %>
+    <p>No recipes have been made public yet </p>
+  <% else %>
     <ul class="m-0 p-0  card-outline-warning">
       <% @recipes.each do |recipe| %>
         <li class="card list-style-none mb-7 w-100 card-outline-warning"
@@ -26,5 +29,6 @@
       </li>
       <% end %>
         </ul>
+    <% end %>
   </div>
 </section>

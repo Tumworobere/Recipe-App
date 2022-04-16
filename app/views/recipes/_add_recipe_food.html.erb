@@ -9,15 +9,19 @@
 
   <div class="form-group add-btn">
     <%= form_with url: recipe_recipe_foods_path(params[:id]), scope: :recipe_foods do |f| %>
-      <div class="field">
-        <%= f.select :food_id,@foods.collect { |food| [food.food, food.id] }, class: "form-select", required: true %>
-      </div>
-      <div class="field">
-        <%= f.number_field :quantity, placeholder: "Quantity (e.g 10, 20 etc)", required: true %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Add Quantity" %>
-      </div>
+      <% if @foods.empty? %>
+        <p>No foods added yet, please add food and try again.</p>
+      <% else %>
+        <div class="field">
+          <%= f.select :food_id,@foods.collect { |food| [food.food, food.id] }, { :prompt => 'Choose Food'}, class: "form-select", required: true %>
+        </div>
+        <div class="field">
+          <%= f.number_field :quantity, placeholder: "Quantity (e.g 10, 20 etc)", required: true %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Add Quantity" %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

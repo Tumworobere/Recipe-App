@@ -5,10 +5,10 @@
   <div>
     <div class="split">
       <div class="d-flex justify-content-between p-2">
-        <h5> Preparation time: <%= @recipe.preparationTime %> min </h5>
+        <h5> Preparation time: <%= @recipe.preparation_time %> min </h5>
         <div class="public-btn form-check form-switch d-flex flex-row">
           <p> Public: <span> <%= form_with url:recipe_path(@recipe.id), :method => :patch do |f| %>
-          <%= f.check_box :public, class:"mx-4 form-check-input", checked:true, onchange: "this.form.submit();", style: "background-color: #DD7230;"  %>
+          <%= f.check_box :public, class:"mx-4 form-check-input", checked: @recipe.public, onchange: "this.form.submit();", style: "background-color: #DD7230;"  %>
            </td>
         <% end %>
         </span></p>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div>
-      <h5 class="p-2"> Cooking time: <%= @recipe.cookingTime %> min </h5>
+      <h5 class="p-2"> Cooking time: <%= @recipe.cooking_time %> min </h5>
     </div>
     <div class="d-flex justify-content-around">
     <div class="w-30 foods-btn">

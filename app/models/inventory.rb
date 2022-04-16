@@ -19,7 +19,7 @@ class Inventory < ApplicationRecord
       quantity_needed = recipe_food.quantity - inventory_food.quantity
       quantity_needed = 0 if quantity_needed.negative?
       if inventory_food && quantity_needed != 0
-        shopping_list << [food.food, "#{quantity_needed} #{food.measurement_unit}", quantity_needed * food.price]
+        shopping_list << [food.food, "#{quantity_needed} #{food.measurement_unit}", quantity_needed * food.unit_price]
       end
     end
     shopping_list

@@ -66,7 +66,8 @@
   }
 }
 
-select#recipe_foods_food_id {
+select#recipe_foods_food_id,
+select#inventory_id {
   width: 100%;
   padding: 10px;
   cursor: pointer;

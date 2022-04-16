@@ -1,17 +1,4 @@
 class InventoryFoodsController < ApplicationController
-  load_and_authorize_resource :inventory
-  load_and_authorize_resource :inventory_food, through: :inventory
-
-  def index
-    @inventory_foods = InventoryFood.all
-  end
-
-  def new
-    @inventory_food = InventoryFood.new
-    @foods = Food.all
-    @current_inventory = Inventory.find(params[:inventory_id])
-  end
-
   def create
     @current_inventory = Inventory.find(params[:inventory_id])
     @inventory_food = @current_inventory.inventory_foods.new(inventory_food_params)
@@ -31,7 +18,7 @@ class InventoryFoodsController < ApplicationController
     @inventory_food.destroy!
 
     respond_to do |format|
-      format.html { redirect_to inventory_url, notice: 'Inventory food successfully deleted.' }
+      format.html { redirect_to inventories_url, notice: 'Inventory food successfully deleted.' }
     end
   end
 

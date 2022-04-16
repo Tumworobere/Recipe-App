@@ -14,7 +14,7 @@ class RecipeFoodsController < ApplicationController
 
   def destroy
     @recipe_food = RecipeFood.find(params[:id])
-    authorize! :destroy, @food
+    authorize! :destroy, @recipe_food
     @recipe_food.destroy!
 
     respond_to do |format|

@@ -12,7 +12,7 @@ RSpec.describe 'Recipe show page', type: :feature do
       fill_in 'Password', with: '123abc'
       click_button 'Log in'
 
-      @recipe = @user1.recipes.create!(name: 'recipe test', cookingTime: '10mins', preparationTime: '10mins',
+      @recipe = @user1.recipes.create!(name: 'recipe test', cooking_time: '10mins', preparation_time: '10mins',
                                        description: 'test recipe')
       visit recipes_path
     end
@@ -40,7 +40,7 @@ RSpec.describe 'Recipe show page', type: :feature do
       fill_in 'Password', with: '123abc'
       click_button 'Log in'
 
-      @recipe = @user1.recipes.create!(name: 'recipe test', cookingTime: '10mins', preparationTime: '10mins',
+      @recipe = @user1.recipes.create!(name: 'recipe test', cooking_time: '10mins', preparation_time: '10mins',
                                        description: 'test recipe')
       visit recipe_path(@recipe)
     end

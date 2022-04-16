@@ -24,9 +24,9 @@
         <td><%= f.quantity %></td>
         <td>
         <% if can? :destroy, f %>
-        <%= link_to 'Remove', inventory_inventory_food_path(:inventory_id => @inventory.id, :id => f.id), 
-        data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
-        class: "btn btn-outline-danger w-25", style: "margin-top: 0", type:"button" %>
+          <%= link_to 'Remove', inventory_inventory_food_path(:inventory_id => @inventory.id, :id => f.id), 
+          data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' },
+          class: "btn btn-outline-danger w-25", style: "margin-top: 0", type:"button" %>
         <% end %>
         </td>
       </tr>

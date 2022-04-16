@@ -8,8 +8,8 @@ RSpec.describe Recipe, type: :model do
 
   context 'values not empty' do
     it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:preparationTime) }
-    it { should validate_presence_of(:cookingTime) }
+    it { should validate_presence_of(:preparation_time) }
+    it { should validate_presence_of(:cooking_time) }
     it { should validate_presence_of(:description) }
   end
 end
