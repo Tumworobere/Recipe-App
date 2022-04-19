@@ -6,7 +6,7 @@ from a recipe. Also, since sharing recipes is an important part of cooking the a
 
 ## Live Version
 
-[Welcome to our Recipe App. Click tos ign up and use](https://wanna-share-some-recipes.herokuapp.com/)
+[Welcome to our Recipe App. Click to sign up and use](https://wanna-share-some-recipes.herokuapp.com/)
 
 ## Project screenshots
 
