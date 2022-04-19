@@ -4,6 +4,10 @@
 keep track of what you have, create recipes, and generate a shopping list  based on what you have and what you are missing 
 from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
+## Live Version
+
+[Welcome to our Recipe App. Click tos ign up and use](https://wanna-share-some-recipes.herokuapp.com/)
+
 ## Project screenshots
 
 ![screenshot](./app_screenshot.png)
